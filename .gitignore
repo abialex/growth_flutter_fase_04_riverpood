@@ -18,20 +18,36 @@ migrate_working_dir/
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Claude Code local settings
+.claude/
+
+# Local project rules doc (not tracked)
+/doc/
+
+# .vscode/launch.json es autogenerado por el editor (rutas de Windows,
+# incluye un target de debug para design_system que ni siquiera es
+# ejecutable) — no aporta valor versionado, cada quien genera el suyo.
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins-dependencies
+.kotlin/
 .pub-cache/
 .pub/
 /build/
 /coverage/
+
+# pubspec.lock de este workspace raíz (solo fija versiones de tooling:
+# melos, flutter_lints). Igual que packages/design_system/.gitignore,
+# no lo versionamos — apps/showcase sí versiona el suyo (es una app).
+/pubspec.lock
+
+# Autogenerado por `melos bootstrap` en cada paquete del monorepo — se
+# regenera solo y trae rutas absolutas de la máquina de quien lo corrió.
+**/pubspec_overrides.yaml
 
 # Symbolication related
 app.*.symbols

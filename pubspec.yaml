@@ -1,19 +1,10 @@
-name: growth_flutter_fase_04_riverpood
-description: "A new Flutter project."
-publish_to: 'none'
-version: 0.1.0
+name: growth_design_system_workspace
+description: Monorepo workspace for the reusable Flutter design system and its showcase app.
+publish_to: "none"
 
 environment:
-  sdk: ^3.9.2
-
-dependencies:
-  flutter:
-    sdk: flutter
+  sdk: ">=3.0.0 <4.0.0"
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  melos: ^6.0.0
   flutter_lints: ^5.0.0
-
-flutter:
-  uses-material-design: true
