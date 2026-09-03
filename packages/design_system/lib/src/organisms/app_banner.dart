@@ -31,6 +31,8 @@ class AppBanner extends StatelessWidget {
     final colors = context.colors;
     final textTheme = Theme.of(context).textTheme;
     final style = _resolveStyle(colors);
+    final label = actionLabel;
+    final action = onAction;
 
     return Material(
       color: style.background,
@@ -47,12 +49,12 @@ class AppBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(message, style: textTheme.bodyMedium?.copyWith(color: style.foreground)),
-                  if (actionLabel != null && onAction != null) ...[
+                  if (label != null && action != null) ...[
                     const SizedBox(height: AppSpacing.xs),
                     InkWell(
-                      onTap: onAction,
+                      onTap: action,
                       child: Text(
-                        actionLabel!,
+                        label,
                         style: textTheme.labelLarge?.copyWith(
                           color: style.foreground,
                           fontWeight: FontWeight.w700,

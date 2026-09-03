@@ -32,6 +32,7 @@ class AppEmptyState extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     final label = actionLabel;
     final action = onAction;
+    final descriptionText = description;
 
     return Padding(
       padding: const EdgeInsets.all(AppSpacing.xl),
@@ -41,10 +42,10 @@ class AppEmptyState extends StatelessWidget {
           Icon(icon, size: AppIconSize.xl, color: colors.onSurface.withValues(alpha: AppOpacity.disabledForeground)),
           const SizedBox(height: AppSpacing.md),
           Text(title, style: textTheme.titleMedium, textAlign: TextAlign.center),
-          if (description != null) ...[
+          if (descriptionText != null) ...[
             const SizedBox(height: AppSpacing.xs),
             Text(
-              description!,
+              descriptionText,
               style: textTheme.bodyMedium?.copyWith(
                 color: colors.onSurface.withValues(alpha: 0.7),
               ),

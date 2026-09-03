@@ -49,15 +49,17 @@ class AppCard extends StatelessWidget {
       ),
     );
 
-    final content = header == null && footer == null
+    final headerSlot = header;
+    final footerSlot = footer;
+    final content = headerSlot == null && footerSlot == null
         ? child
         : Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (header != null) ...[header!, const SizedBox(height: AppSpacing.sm)],
+              if (headerSlot != null) ...[headerSlot, const SizedBox(height: AppSpacing.sm)],
               child,
-              if (footer != null) ...[const SizedBox(height: AppSpacing.sm), footer!],
+              if (footerSlot != null) ...[const SizedBox(height: AppSpacing.sm), footerSlot],
             ],
           );
 

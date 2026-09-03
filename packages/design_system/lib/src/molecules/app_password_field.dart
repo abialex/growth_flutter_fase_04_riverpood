@@ -36,7 +36,8 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
-    final hasError = widget.errorText != null && widget.errorText!.isNotEmpty;
+    final errorText = widget.errorText;
+    final hasError = errorText != null && errorText.isNotEmpty;
     final iconColor = !widget.enabled
         ? colors.onSurface.withValues(alpha: AppOpacity.disabledForeground)
         : hasError
