@@ -1,3 +1,30 @@
 {
-    "dart.flutterSdkPath": "D:\\projects_flutter\\autplan_2026\\.fvm\\versions\\3.35.7"
+    "dart.flutterSdkPath": "D:\\projects_flutter\\autplan_2026\\.fvm\\versions\\3.35.7",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#814ddb",
+        "activityBar.background": "#814ddb",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#df8e60",
+        "activityBarBadge.foreground": "#15202b",
+        "activityBarTop.activeBackground": "#814ddb",
+        "activityBarTop.background": "#814ddb",
+        "activityBarTop.foreground": "#e7e7e7",
+        "activityBarTop.inactiveForeground": "#e7e7e799",
+        "commandCenter.border": "#e7e7e799",
+        "commandCenter.foreground": "#e7e7e7",
+        "sash.hoverBorder": "#814ddb",
+        "statusBar.background": "#6429cd",
+        "statusBar.debuggingBackground": "#6429cd",
+        "statusBar.debuggingForeground": "#e7e7e7",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#814ddb",
+        "statusBarItem.remoteBackground": "#351a0b",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#6429cd",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#6429cd99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#6429CD"
 }

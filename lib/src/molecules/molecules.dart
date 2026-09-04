@@ -1,6 +1,7 @@
 export 'app_card.dart';
 export 'app_chip.dart';
 export 'app_dropdown_field.dart';
+export 'app_dropdown_item.dart';
 export 'app_password_field.dart';
 export 'app_phone_field.dart';
 export 'app_text_field.dart';

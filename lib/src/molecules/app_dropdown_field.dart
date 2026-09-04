@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../tokens/color_tokens.dart';
+import 'app_dropdown_item.dart';
 import 'internal/app_field_decoration.dart';
-
-/// One selectable option for [AppDropdownField].
-class AppDropdownItem<T> {
-  const AppDropdownItem({required this.value, required this.label});
-
-  final T value;
-  final String label;
-}
 
 /// Filled dropdown field, styled to match [AppTextField].
 class AppDropdownField<T> extends StatelessWidget {

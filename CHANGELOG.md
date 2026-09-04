@@ -1,3 +1,9 @@
+## [Unreleased]
+
+- `AppDropdownItem` movido a su propio archivo (`app_dropdown_item.dart`) — antes compartía archivo con `AppDropdownField`.
+- README reordenado para seguir la convención de paquete (Requisitos → Instalación → Inicialización → Uso → Arquitectura al final).
+- Reemplazados los usos de `!` (force unwrap) en `AppPasswordField`, `AppCard`, `AppBanner` y `AppEmptyState` por variables locales promovidas.
+
 ## 0.1.0
 
 Primera versión usable del design system.
