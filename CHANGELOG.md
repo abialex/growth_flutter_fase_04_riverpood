@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- **Breaking (instalación por `git:`)**: el paquete se movió de `packages/design_system` a la raíz del repo — mismo formato que `growth_flutter_fase_03_riverpood` (paquete en la raíz + `example/` como app consumidora), ya sin Melos. Quien dependa de este repo vía `git:` debe sacar el `path: packages/design_system` de su `pubspec.yaml` (la dependencia ahora apunta directo a la raíz del repo). La API pública (`design_system.dart` y sus exports) no cambió.
 - `AppDropdownItem` movido a su propio archivo (`app_dropdown_item.dart`) — antes compartía archivo con `AppDropdownField`.
 - README reordenado para seguir la convención de paquete (Requisitos → Instalación → Inicialización → Uso → Arquitectura al final).
 - Reemplazados los usos de `!` (force unwrap) en `AppPasswordField`, `AppCard`, `AppBanner` y `AppEmptyState` por variables locales promovidas.

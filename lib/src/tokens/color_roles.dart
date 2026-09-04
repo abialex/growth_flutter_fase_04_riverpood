@@ -1,8 +1,10 @@
+// ignore_for_file: public_member_api_docs, every Color field here is a semantic role already fully described by its own name — primary/onPrimary/primaryContainer/etc. — a doc comment would just restate it.
+
 import 'package:flutter/material.dart';
 
 /// Semantic color roles the design system exposes to components.
 /// A concrete instance is resolved per [Brightness] (and brand) by
-/// [AppColorTokens].
+/// `AppColorTokens`.
 @immutable
 class AppColorRoles extends ThemeExtension<AppColorRoles> {
   const AppColorRoles({
@@ -111,36 +113,45 @@ class AppColorRoles extends ThemeExtension<AppColorRoles> {
       primary: Color.lerp(primary, other.primary, progress) ?? primary,
       onPrimary: Color.lerp(onPrimary, other.onPrimary, progress) ?? onPrimary,
       primaryContainer:
-          Color.lerp(primaryContainer, other.primaryContainer, progress) ?? primaryContainer,
+          Color.lerp(primaryContainer, other.primaryContainer, progress) ??
+          primaryContainer,
       onPrimaryContainer:
           Color.lerp(onPrimaryContainer, other.onPrimaryContainer, progress) ??
-              onPrimaryContainer,
+          onPrimaryContainer,
       secondary: Color.lerp(secondary, other.secondary, progress) ?? secondary,
-      onSecondary: Color.lerp(onSecondary, other.onSecondary, progress) ?? onSecondary,
-      background: Color.lerp(background, other.background, progress) ?? background,
-      onBackground: Color.lerp(onBackground, other.onBackground, progress) ?? onBackground,
+      onSecondary:
+          Color.lerp(onSecondary, other.onSecondary, progress) ?? onSecondary,
+      background:
+          Color.lerp(background, other.background, progress) ?? background,
+      onBackground:
+          Color.lerp(onBackground, other.onBackground, progress) ??
+          onBackground,
       surface: Color.lerp(surface, other.surface, progress) ?? surface,
       onSurface: Color.lerp(onSurface, other.onSurface, progress) ?? onSurface,
       error: Color.lerp(error, other.error, progress) ?? error,
       onError: Color.lerp(onError, other.onError, progress) ?? onError,
       errorContainer:
-          Color.lerp(errorContainer, other.errorContainer, progress) ?? errorContainer,
+          Color.lerp(errorContainer, other.errorContainer, progress) ??
+          errorContainer,
       onErrorContainer:
-          Color.lerp(onErrorContainer, other.onErrorContainer, progress) ?? onErrorContainer,
+          Color.lerp(onErrorContainer, other.onErrorContainer, progress) ??
+          onErrorContainer,
       success: Color.lerp(success, other.success, progress) ?? success,
       onSuccess: Color.lerp(onSuccess, other.onSuccess, progress) ?? onSuccess,
       successContainer:
-          Color.lerp(successContainer, other.successContainer, progress) ?? successContainer,
+          Color.lerp(successContainer, other.successContainer, progress) ??
+          successContainer,
       onSuccessContainer:
           Color.lerp(onSuccessContainer, other.onSuccessContainer, progress) ??
-              onSuccessContainer,
+          onSuccessContainer,
       warning: Color.lerp(warning, other.warning, progress) ?? warning,
       onWarning: Color.lerp(onWarning, other.onWarning, progress) ?? onWarning,
       warningContainer:
-          Color.lerp(warningContainer, other.warningContainer, progress) ?? warningContainer,
+          Color.lerp(warningContainer, other.warningContainer, progress) ??
+          warningContainer,
       onWarningContainer:
           Color.lerp(onWarningContainer, other.onWarningContainer, progress) ??
-              onWarningContainer,
+          onWarningContainer,
     );
   }
 }

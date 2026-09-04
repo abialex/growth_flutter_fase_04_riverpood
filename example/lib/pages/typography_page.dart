@@ -31,7 +31,8 @@ class TypographyPage extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(AppSpacing.md),
         itemCount: styles.length,
-        separatorBuilder: (context, index) => const SizedBox(height: AppSpacing.md),
+        separatorBuilder: (context, index) =>
+            const SizedBox(height: AppSpacing.md),
         itemBuilder: (context, index) {
           final style = styles[index];
           return Column(

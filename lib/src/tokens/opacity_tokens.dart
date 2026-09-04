@@ -3,7 +3,10 @@
 class AppOpacity {
   const AppOpacity._();
 
+  /// Disabled state over `onSurface` (e.g. disabled button, chip, textfield).
   static const double disabledBackground = 0.12;
+
+  /// Disabled state over `onSurface` (e.g. disabled text, icon).
   static const double disabledForeground = 0.38;
 
   /// Subtle hairline border/divider over `onSurface` (e.g. outlined card).
@@ -15,5 +18,8 @@ class AppOpacity {
   /// `focusColor`/`hoverColor` tint over `primary` for interactive
   /// components (buttons, chips).
   static const double focus = 0.12;
+
+  /// `hoverColor` tint over `primary` for interactive components
+  /// (buttons, chips).
   static const double hover = 0.08;
 }

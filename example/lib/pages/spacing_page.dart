@@ -44,7 +44,8 @@ class SpacingPage extends StatelessWidget {
             spacing: AppSpacing.md,
             runSpacing: AppSpacing.md,
             children: [
-              for (final token in radiusValues) _RadiusSample(token: token, color: colors.primary),
+              for (final token in radiusValues)
+                _RadiusSample(token: token, color: colors.primary),
             ],
           ),
         ],

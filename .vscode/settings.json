@@ -1,5 +1,10 @@
 {
     "dart.flutterSdkPath": "D:\\projects_flutter\\autplan_2026\\.fvm\\versions\\3.35.7",
+    "[dart]": {
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.formatOnSave": true,
+        "editor.rulers": [80]
+    },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#814ddb",
         "activityBar.background": "#814ddb",

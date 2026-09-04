@@ -24,11 +24,14 @@ class ButtonsPage extends StatelessWidget {
           const SizedBox(height: AppSpacing.sm),
           const Align(
             alignment: Alignment.centerLeft,
-            child: _ButtonColumn(size: AppButtonSize.small, includeOutline: true),
+            child: _ButtonColumn(
+              size: AppButtonSize.small,
+              includeOutline: true,
+            ),
           ),
           const SizedBox(height: AppSpacing.lg),
-          // Not in the design mockups — required as a variant by
-          // doc/PROJECT_RULES.md (delete/cancel/irreversible actions).
+          // Not in the design mockups — added as a variant needed for
+          // delete/cancel/irreversible actions.
           Text('Destructive', style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.sm),
           const Align(
@@ -59,11 +62,7 @@ class _ButtonColumn extends StatelessWidget {
           onPressed: () {},
         ),
         const SizedBox(height: AppSpacing.sm),
-        AppButton(
-          label: 'Orange',
-          size: size,
-          onPressed: () {},
-        ),
+        AppButton(label: 'Orange', size: size, onPressed: () {}),
         const SizedBox(height: AppSpacing.sm),
         AppButton(
           label: 'Disabled',

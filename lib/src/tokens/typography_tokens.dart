@@ -11,6 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTypographyTokens {
   const AppTypographyTokens._();
 
+  /// Returns a [TextTheme] with the Inter font family and a base color
+  /// appropriate for the given [brightness].
   static TextTheme textTheme({required Brightness brightness}) {
     final baseColor = brightness == Brightness.light
         ? const Color(0xFF1B1B1F)

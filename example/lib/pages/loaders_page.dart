@@ -27,7 +27,10 @@ class LoadersPage extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
           Text('Pantalla completa con mensaje', style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.sm),
-          const AppLoader(size: AppLoaderSize.large, message: 'Cargando información...'),
+          const AppLoader(
+            size: AppLoaderSize.large,
+            message: 'Cargando información...',
+          ),
         ],
       ),
     );

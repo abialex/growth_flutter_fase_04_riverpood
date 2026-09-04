@@ -59,7 +59,8 @@ class ShowcaseHomePage extends ConsumerWidget {
                 ),
                 _CategoryTile(
                   title: 'Tipografía',
-                  subtitle: 'Escala Material (display/headline/title/body/label) con Inter',
+                  subtitle:
+                      'Escala Material (display/headline/title/body/label) con Inter',
                   icon: Icons.text_fields_outlined,
                   onTap: () => _onOpenCategory(context, const TypographyPage()),
                 ),
@@ -71,19 +72,22 @@ class ShowcaseHomePage extends ConsumerWidget {
                 ),
                 _CategoryTile(
                   title: 'Botones',
-                  subtitle: 'Secundario y micro, variantes light/orange/disabled/white',
+                  subtitle:
+                      'Secundario y micro, variantes light/orange/disabled/white',
                   icon: Icons.smart_button_outlined,
                   onTap: () => _onOpenCategory(context, const ButtonsPage()),
                 ),
                 _CategoryTile(
                   title: 'Tags',
-                  subtitle: 'Chips de una sola etiqueta, mismas variantes que los botones',
+                  subtitle:
+                      'Chips de una sola etiqueta, mismas variantes que los botones',
                   icon: Icons.label_outline,
                   onTap: () => _onOpenCategory(context, const TagsPage()),
                 ),
                 _CategoryTile(
                   title: 'Text fields',
-                  subtitle: 'Texto, dropdown, password y teléfono con código de país',
+                  subtitle:
+                      'Texto, dropdown, password y teléfono con código de país',
                   icon: Icons.input_outlined,
                   onTap: () => _onOpenCategory(context, const TextFieldsPage()),
                 ),
@@ -95,13 +99,15 @@ class ShowcaseHomePage extends ConsumerWidget {
                 ),
                 _CategoryTile(
                   title: 'Loaders',
-                  subtitle: 'Circular (small/medium/large), con mensaje opcional',
+                  subtitle:
+                      'Circular (small/medium/large), con mensaje opcional',
                   icon: Icons.autorenew_outlined,
                   onTap: () => _onOpenCategory(context, const LoadersPage()),
                 ),
                 _CategoryTile(
                   title: 'Banners y empty states',
-                  subtitle: 'Info/success/warning/error + sin resultados/sin conexión',
+                  subtitle:
+                      'Info/success/warning/error + sin resultados/sin conexión',
                   icon: Icons.campaign_outlined,
                   onTap: () => _onOpenCategory(context, const BannersPage()),
                 ),
@@ -114,8 +120,9 @@ class ShowcaseHomePage extends ConsumerWidget {
   }
 
   void _onToggleTheme(WidgetRef ref, ThemeMode currentMode) {
-    ref.read(themeModeProvider.notifier).state =
-        currentMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    ref.read(themeModeProvider.notifier).state = currentMode == ThemeMode.dark
+        ? ThemeMode.light
+        : ThemeMode.dark;
   }
 
   void _onSelectBrand(WidgetRef ref, Set<AppBrand> selection) {

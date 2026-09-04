@@ -1,10 +1,13 @@
+import 'package:design_system/design_system.dart'
+    show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
+import 'package:design_system/src/molecules/molecules.dart'
+    show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
+import 'package:design_system/src/tokens/border_width_tokens.dart';
+import 'package:design_system/src/tokens/color_roles.dart';
+import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:design_system/src/tokens/radius_tokens.dart';
+import 'package:design_system/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
-
-import '../../tokens/border_width_tokens.dart';
-import '../../tokens/color_roles.dart';
-import '../../tokens/opacity_tokens.dart';
-import '../../tokens/radius_tokens.dart';
-import '../../tokens/spacing_tokens.dart';
 
 /// Shared, filled-style [InputDecoration] used by every text-field-family
 /// molecule ([AppTextField], [AppPasswordField], [AppDropdownField],
@@ -21,18 +24,21 @@ InputDecoration buildAppFieldDecoration({
 }) {
   final hasError = errorText != null && errorText.isNotEmpty;
   final borderRadius = BorderRadius.circular(AppRadius.lg);
-  final noBorder = OutlineInputBorder(borderRadius: borderRadius, borderSide: BorderSide.none);
+  final noBorder = OutlineInputBorder(
+    borderRadius: borderRadius,
+    borderSide: BorderSide.none,
+  );
 
   final backgroundColor = isDisabled
       ? colors.onSurface.withValues(alpha: AppOpacity.disabledBackground)
       : hasError
-          ? colors.errorContainer
-          : colors.surface;
+      ? colors.errorContainer
+      : colors.surface;
   final contentColor = isDisabled
       ? colors.onSurface.withValues(alpha: AppOpacity.disabledForeground)
       : hasError
-          ? colors.onErrorContainer
-          : colors.onSurface;
+      ? colors.onErrorContainer
+      : colors.onSurface;
 
   return InputDecoration(
     filled: true,
@@ -43,7 +49,9 @@ InputDecoration buildAppFieldDecoration({
     errorText: hasError ? errorText : null,
     prefixIcon: prefixIcon,
     suffixIcon: suffixIcon,
-    hintStyle: TextStyle(color: hasError ? colors.onErrorContainer : colors.primary),
+    hintStyle: TextStyle(
+      color: hasError ? colors.onErrorContainer : colors.primary,
+    ),
     labelStyle: TextStyle(color: contentColor),
     contentPadding: const EdgeInsets.symmetric(
       horizontal: AppSpacing.md,
@@ -55,11 +63,17 @@ InputDecoration buildAppFieldDecoration({
     errorBorder: noBorder,
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: colors.primary, width: AppBorderWidth.medium),
+      borderSide: BorderSide(
+        color: colors.primary,
+        width: AppBorderWidth.medium,
+      ),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: colors.onErrorContainer, width: AppBorderWidth.medium),
+      borderSide: BorderSide(
+        color: colors.onErrorContainer,
+        width: AppBorderWidth.medium,
+      ),
     ),
     errorStyle: TextStyle(color: colors.onErrorContainer),
   );

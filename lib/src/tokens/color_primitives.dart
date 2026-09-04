@@ -1,7 +1,9 @@
+// ignore_for_file: public_member_api_docs, every constant here is a raw hex color named after its own brand/brightness/role (e.g. onOrangeContainerDark) — a doc comment would just restate the name; see the class doc and the block comments below for context that isn't obvious from the names.
+
 import 'package:flutter/material.dart';
 
-/// Raw color values with no semantic meaning. Only [AppColorTokens]
-/// (via [AppColorRoles]) should reference these directly.
+/// Raw color values with no semantic meaning. Only `AppColorTokens`
+/// (via `AppColorRoles`) should reference these directly.
 class AppColorPrimitives {
   const AppColorPrimitives._();
 

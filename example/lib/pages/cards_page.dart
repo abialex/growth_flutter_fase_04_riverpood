@@ -20,7 +20,9 @@ class CardsPage extends StatelessWidget {
             variant: AppCardVariant.filled,
             child: Text(
               'Toda tu información estará segura con nosotros.',
-              style: textTheme.bodyMedium?.copyWith(color: colors.onPrimaryContainer),
+              style: textTheme.bodyMedium?.copyWith(
+                color: colors.onPrimaryContainer,
+              ),
             ),
           ),
           const SizedBox(height: AppSpacing.sm),
@@ -28,15 +30,15 @@ class CardsPage extends StatelessWidget {
             variant: AppCardVariant.filled,
             child: Text(
               'Toda tu información estará segura con nosotros y nunca la compartiremos con terceros.',
-              style: textTheme.bodyMedium?.copyWith(color: colors.onPrimaryContainer),
+              style: textTheme.bodyMedium?.copyWith(
+                color: colors.onPrimaryContainer,
+              ),
             ),
           ),
           const SizedBox(height: AppSpacing.lg),
           Text('Elevated / outlined', style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.sm),
-          AppCard(
-            child: Text('Elevated card', style: textTheme.bodyMedium),
-          ),
+          AppCard(child: Text('Elevated card', style: textTheme.bodyMedium)),
           const SizedBox(height: AppSpacing.sm),
           AppCard(
             variant: AppCardVariant.outlined,

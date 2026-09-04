@@ -1,6 +1,6 @@
 # showcase
 
-App Riverpod que documenta visualmente `packages/design_system`: cada token y componente, organizados por categoría, mostrando todas sus variantes y estados. Es un consumidor externo del paquete (`design_system: path: ../../packages/design_system`) — el paquete nunca se ejecuta por sí mismo.
+App Riverpod que documenta visualmente el paquete `design_system` (raíz de este repo): cada token y componente, organizados por categoría, mostrando todas sus variantes y estados. Es un consumidor externo del paquete (`design_system: path: ../`) — el paquete nunca se ejecuta por sí mismo.
 
 ## Correr la app
 
@@ -10,7 +10,7 @@ flutter run -d windows    # si tienes esa plataforma habilitada
 flutter run -d <emulator> # Android/iOS
 ```
 
-Requiere haber corrido `dart run melos bootstrap` desde la raíz del monorepo al menos una vez.
+Requiere haber corrido `flutter pub get` en esta carpeta (`example/`) al menos una vez.
 
 ## Qué muestra
 

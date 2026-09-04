@@ -32,7 +32,11 @@ class _TagsPageState extends State<TagsPage> {
                 SizedBox(height: AppSpacing.sm),
                 AppChip(label: 'Label Tag'),
                 SizedBox(height: AppSpacing.sm),
-                AppChip(label: 'Label Tag', emphasis: AppEmphasis.light, isDisabled: true),
+                AppChip(
+                  label: 'Label Tag',
+                  emphasis: AppEmphasis.light,
+                  isDisabled: true,
+                ),
                 SizedBox(height: AppSpacing.sm),
                 AppChip(label: 'Label Tag', emphasis: AppEmphasis.outline),
               ],

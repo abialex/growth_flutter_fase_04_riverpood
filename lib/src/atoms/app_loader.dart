@@ -1,34 +1,31 @@
+import 'package:design_system/src/atoms/enums/app_loader_size.dart';
+import 'package:design_system/src/tokens/color_tokens.dart';
+import 'package:design_system/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
-import '../tokens/color_tokens.dart';
-import '../tokens/spacing_tokens.dart';
-import 'enums/app_loader_size.dart';
-
-/// Indeterminate circular loader. Diameters reuse the spacing scale
-/// (`sm`→`AppSpacing.md`, `medium`→`AppSpacing.xl`, `large`→`AppSpacing.xxl`)
-/// instead of introducing a new magic-number scale.
+/// Indeterminate circular loader. See [AppLoaderSize.diameter] for how each
+/// size maps to the spacing scale.
 class AppLoader extends StatelessWidget {
+  /// Creates a loader. [size] controls the diameter, and [message] is an
+  /// optional label shown below the spinner.
   const AppLoader({
     super.key,
     this.size = AppLoaderSize.medium,
     this.message,
   });
 
+  /// Diameter of the spinner, in logical pixels.
   final AppLoaderSize size;
-  final String? message;
 
-  double get _diameter => switch (size) {
-        AppLoaderSize.small => AppSpacing.md,
-        AppLoaderSize.medium => AppSpacing.xl,
-        AppLoaderSize.large => AppSpacing.xxl,
-      };
+  /// Optional label shown below the spinner. If `null` or empty, no label
+  final String? message;
 
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
     final indicator = SizedBox(
-      height: _diameter,
-      width: _diameter,
+      height: size.diameter,
+      width: size.diameter,
       child: CircularProgressIndicator(
         strokeWidth: size == AppLoaderSize.small ? 2 : 3,
         color: colors.primary,
@@ -45,7 +42,9 @@ class AppLoader extends StatelessWidget {
         const SizedBox(height: AppSpacing.sm),
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: colors.onSurface),
+          style: Theme.of(
+            context,
+          ).textTheme.bodyMedium?.copyWith(color: colors.onSurface),
           textAlign: TextAlign.center,
         ),
       ],

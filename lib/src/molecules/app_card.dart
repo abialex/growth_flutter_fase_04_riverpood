@@ -1,12 +1,12 @@
+import 'package:design_system/design_system.dart' show AppButton, AppChip;
+import 'package:design_system/src/molecules/enums/app_card_variant.dart';
+import 'package:design_system/src/tokens/border_width_tokens.dart';
+import 'package:design_system/src/tokens/color_tokens.dart';
+import 'package:design_system/src/tokens/elevation_tokens.dart';
+import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:design_system/src/tokens/radius_tokens.dart';
+import 'package:design_system/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
-
-import '../tokens/border_width_tokens.dart';
-import '../tokens/color_tokens.dart';
-import '../tokens/elevation_tokens.dart';
-import '../tokens/opacity_tokens.dart';
-import '../tokens/radius_tokens.dart';
-import '../tokens/spacing_tokens.dart';
-import 'enums/app_card_variant.dart';
 
 /// Card container. [variant] `filled` defaults to `primaryContainer`
 /// (matches the "info card" mockup) — pass [backgroundColor] to override
@@ -17,6 +17,8 @@ import 'enums/app_card_variant.dart';
 /// [Card.outlined] — not hand-rolled `Material`. Same reasoning as
 /// [AppButton]/[AppChip].
 class AppCard extends StatelessWidget {
+  /// Creates a card. [child] is required; everything else has a default — see
+  /// the class doc for what each one controls.
   const AppCard({
     required this.child,
     super.key,
@@ -28,12 +30,27 @@ class AppCard extends StatelessWidget {
     this.footer,
   });
 
+  /// Content inside the card. Required.
   final Widget child;
+
+  /// Card variant: `elevated` (default), `filled` or `outlined`. See the
+  /// class doc for how each one is styled.
   final AppCardVariant variant;
+
+  /// Background color. Defaults to `null` (transparent) for `elevated` and
+  /// `outlined`, and `primaryContainer` for `filled`.
   final Color? backgroundColor;
+
+  /// Called when the card is tapped. If `null`, the card is not tappable.
   final VoidCallback? onTap;
+
+  /// Padding around [child]. Defaults to [AppSpacing.md] on all sides.
   final EdgeInsetsGeometry padding;
+
+  /// Optional widget rendered above [child], separated by [AppSpacing.sm].
   final Widget? header;
+
+  /// Optional widget rendered below [child], separated by [AppSpacing.sm].
   final Widget? footer;
 
   @override
@@ -45,6 +62,7 @@ class AppCard extends StatelessWidget {
       borderRadius: radius,
       side: BorderSide(
         color: colors.onSurface.withValues(alpha: AppOpacity.border),
+        // ignore: avoid_redundant_argument_values, token-first — explicit on purpose, not relying on BorderSide's default matching AppBorderWidth.thin.
         width: AppBorderWidth.thin,
       ),
     );
@@ -57,41 +75,49 @@ class AppCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (headerSlot != null) ...[headerSlot, const SizedBox(height: AppSpacing.sm)],
+              if (headerSlot != null) ...[
+                headerSlot,
+                const SizedBox(height: AppSpacing.sm),
+              ],
               child,
-              if (footerSlot != null) ...[const SizedBox(height: AppSpacing.sm), footerSlot],
+              if (footerSlot != null) ...[
+                const SizedBox(height: AppSpacing.sm),
+                footerSlot,
+              ],
             ],
           );
 
     final body = InkWell(
       onTap: onTap,
-      customBorder: variant == AppCardVariant.outlined ? outlineShape : plainShape,
+      customBorder: variant == AppCardVariant.outlined
+          ? outlineShape
+          : plainShape,
       child: Padding(padding: padding, child: content),
     );
 
     return switch (variant) {
       AppCardVariant.elevated => Card(
-          color: backgroundColor,
-          elevation: AppElevation.low,
-          shape: plainShape,
-          margin: EdgeInsets.zero,
-          clipBehavior: Clip.antiAlias,
-          child: body,
-        ),
+        color: backgroundColor,
+        elevation: AppElevation.low,
+        shape: plainShape,
+        margin: EdgeInsets.zero,
+        clipBehavior: Clip.antiAlias,
+        child: body,
+      ),
       AppCardVariant.filled => Card.filled(
-          color: backgroundColor ?? colors.primaryContainer,
-          shape: plainShape,
-          margin: EdgeInsets.zero,
-          clipBehavior: Clip.antiAlias,
-          child: body,
-        ),
+        color: backgroundColor ?? colors.primaryContainer,
+        shape: plainShape,
+        margin: EdgeInsets.zero,
+        clipBehavior: Clip.antiAlias,
+        child: body,
+      ),
       AppCardVariant.outlined => Card.outlined(
-          color: backgroundColor,
-          shape: outlineShape,
-          margin: EdgeInsets.zero,
-          clipBehavior: Clip.antiAlias,
-          child: body,
-        ),
+        color: backgroundColor,
+        shape: outlineShape,
+        margin: EdgeInsets.zero,
+        clipBehavior: Clip.antiAlias,
+        child: body,
+      ),
     };
   }
 }

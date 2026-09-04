@@ -1,16 +1,17 @@
+import 'package:design_system/src/organisms/enums/app_banner_variant.dart';
+import 'package:design_system/src/tokens/color_roles.dart';
+import 'package:design_system/src/tokens/color_tokens.dart';
+import 'package:design_system/src/tokens/icon_size_tokens.dart';
+import 'package:design_system/src/tokens/radius_tokens.dart';
+import 'package:design_system/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
-
-import '../tokens/color_roles.dart';
-import '../tokens/color_tokens.dart';
-import '../tokens/icon_size_tokens.dart';
-import '../tokens/radius_tokens.dart';
-import '../tokens/spacing_tokens.dart';
-import 'enums/app_banner_variant.dart';
 
 /// Inline message banner. [variant] selects color + icon from tokens.
 /// Pass [actionLabel]/[onAction] for an optional inline action, and
 /// [onDismiss] to show a close icon.
 class AppBanner extends StatelessWidget {
+  /// Creates a banner. [message] is required; everything else has a
+  /// default — see the class doc for what each one controls.
   const AppBanner({
     required this.message,
     super.key,
@@ -20,10 +21,22 @@ class AppBanner extends StatelessWidget {
     this.onDismiss,
   });
 
+  /// Text shown in the banner.
   final String message;
+
+  /// Color and icon treatment: `info` (default), `success`, `warning` or
+  /// `error`.
   final AppBannerVariant variant;
+
+  /// Text for the optional inline action. Only shown when [onAction] is
+  /// also set.
   final String? actionLabel;
+
+  /// Called when the inline action is tapped. Only shown when
+  /// [actionLabel] is also set.
   final VoidCallback? onAction;
+
+  /// Called when the close icon is tapped. `null` hides the close icon.
   final VoidCallback? onDismiss;
 
   @override
@@ -48,7 +61,12 @@ class AppBanner extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(message, style: textTheme.bodyMedium?.copyWith(color: style.foreground)),
+                  Text(
+                    message,
+                    style: textTheme.bodyMedium?.copyWith(
+                      color: style.foreground,
+                    ),
+                  ),
                   if (label != null && action != null) ...[
                     const SizedBox(height: AppSpacing.xs),
                     InkWell(
@@ -71,7 +89,11 @@ class AppBanner extends StatelessWidget {
               InkWell(
                 onTap: onDismiss,
                 borderRadius: BorderRadius.circular(AppRadius.full),
-                child: Icon(Icons.close, color: style.foreground, size: AppIconSize.sm),
+                child: Icon(
+                  Icons.close,
+                  color: style.foreground,
+                  size: AppIconSize.sm,
+                ),
               ),
             ],
           ],
@@ -83,31 +105,35 @@ class AppBanner extends StatelessWidget {
   _BannerStyle _resolveStyle(AppColorRoles colors) {
     return switch (variant) {
       AppBannerVariant.info => _BannerStyle(
-          background: colors.primaryContainer,
-          foreground: colors.onPrimaryContainer,
-          icon: Icons.info_outline,
-        ),
+        background: colors.primaryContainer,
+        foreground: colors.onPrimaryContainer,
+        icon: Icons.info_outline,
+      ),
       AppBannerVariant.success => _BannerStyle(
-          background: colors.successContainer,
-          foreground: colors.onSuccessContainer,
-          icon: Icons.check_circle_outline,
-        ),
+        background: colors.successContainer,
+        foreground: colors.onSuccessContainer,
+        icon: Icons.check_circle_outline,
+      ),
       AppBannerVariant.warning => _BannerStyle(
-          background: colors.warningContainer,
-          foreground: colors.onWarningContainer,
-          icon: Icons.warning_amber_outlined,
-        ),
+        background: colors.warningContainer,
+        foreground: colors.onWarningContainer,
+        icon: Icons.warning_amber_outlined,
+      ),
       AppBannerVariant.error => _BannerStyle(
-          background: colors.errorContainer,
-          foreground: colors.onErrorContainer,
-          icon: Icons.error_outline,
-        ),
+        background: colors.errorContainer,
+        foreground: colors.onErrorContainer,
+        icon: Icons.error_outline,
+      ),
     };
   }
 }
 
 class _BannerStyle {
-  const _BannerStyle({required this.background, required this.foreground, required this.icon});
+  const _BannerStyle({
+    required this.background,
+    required this.foreground,
+    required this.icon,
+  });
 
   final Color background;
   final Color foreground;

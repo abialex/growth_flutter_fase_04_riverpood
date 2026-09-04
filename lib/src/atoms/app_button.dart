@@ -1,20 +1,19 @@
 import 'dart:math' as math;
 
+import 'package:design_system/src/atoms/enums/app_button_size.dart';
+import 'package:design_system/src/tokens/border_width_tokens.dart';
+import 'package:design_system/src/tokens/color_roles.dart';
+import 'package:design_system/src/tokens/color_tokens.dart';
+import 'package:design_system/src/tokens/enums/app_emphasis.dart';
+import 'package:design_system/src/tokens/icon_size_tokens.dart';
+import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:design_system/src/tokens/radius_tokens.dart';
+import 'package:design_system/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
-import '../tokens/border_width_tokens.dart';
-import '../tokens/color_roles.dart';
-import '../tokens/color_tokens.dart';
-import '../tokens/enums/app_emphasis.dart';
-import '../tokens/icon_size_tokens.dart';
-import '../tokens/opacity_tokens.dart';
-import '../tokens/radius_tokens.dart';
-import '../tokens/spacing_tokens.dart';
-import 'enums/app_button_size.dart';
-
-/// Minimum logical tap target per accessibility guidelines (see
-/// `doc/PROJECT_RULES.md` — Botones). The visible pill can be smaller
-/// (`small`/micro is 36dp tall); the tappable area never is.
+/// Minimum logical tap target per accessibility guidelines. The visible
+/// pill can be smaller (`small`/micro is 36dp tall); the tappable area
+/// never is.
 const double _minTouchTarget = 44;
 
 /// Pill-shaped button. [emphasis] controls the color treatment
@@ -24,9 +23,11 @@ const double _minTouchTarget = 44;
 /// Thin styling layer over Flutter's own [FilledButton]/[OutlinedButton] —
 /// not a hand-rolled `Material`+`InkWell`. That gets keyboard focus/hover,
 /// Enter/Space activation and button semantics for free instead of us
-/// reimplementing them, and stays dependency-free (`doc/PROJECT_RULES.md`
-/// forbids unnecessary packages, not the Flutter SDK's own widgets).
+/// reimplementing them, and stays dependency-free (the project avoids
+/// unnecessary packages, not the Flutter SDK's own widgets).
 class AppButton extends StatelessWidget {
+  /// Creates a button. [label] and [onPressed] are required; everything
+  /// else has a default — see the class doc for what each one controls.
   const AppButton({
     required this.label,
     required this.onPressed,
@@ -39,19 +40,33 @@ class AppButton extends StatelessWidget {
     this.trailingIcon,
   });
 
+  /// Text shown inside the button.
   final String label;
+
+  /// Called when the button is tapped. Pass `null` to render it disabled.
   final VoidCallback? onPressed;
+
+  /// Color treatment: `solid` (filled), `light` (tinted container) or
+  /// `outline`.
   final AppEmphasis emphasis;
+
+  /// Button height: `medium` (48dp) or `small` (36dp).
   final AppButtonSize size;
+
+  /// Shows a spinner in place of the label without changing the button's
+  /// size.
   final bool isLoading;
 
   /// Swaps the emphasis color source from `primary`/`primaryContainer` to
   /// `error`/`errorContainer`. Not present in the design mockups this atom
   /// was built from — added so the atom covers the "destructive" variant
-  /// required by `doc/PROJECT_RULES.md` (delete/cancel/irreversible actions).
+  /// needed for delete/cancel/irreversible actions.
   final bool isDestructive;
 
+  /// Optional icon shown before the label.
   final IconData? leadingIcon;
+
+  /// Optional icon shown after the label.
   final IconData? trailingIcon;
 
   bool get _isDisabled => onPressed == null || isLoading;
@@ -71,8 +86,9 @@ class AppButton extends StatelessWidget {
 
   Widget _buildChild(BuildContext context, Color enabledForegroundColor) {
     final isMedium = size == AppButtonSize.medium;
-    final baseTextStyle =
-        isMedium ? Theme.of(context).textTheme.labelLarge : Theme.of(context).textTheme.labelMedium;
+    final baseTextStyle = isMedium
+        ? Theme.of(context).textTheme.labelLarge
+        : Theme.of(context).textTheme.labelMedium;
 
     final content = Row(
       mainAxisSize: MainAxisSize.min,
@@ -100,7 +116,10 @@ class AppButton extends StatelessWidget {
         SizedBox(
           height: AppIconSize.md,
           width: AppIconSize.md,
-          child: CircularProgressIndicator(strokeWidth: 2, color: enabledForegroundColor),
+          child: CircularProgressIndicator(
+            strokeWidth: 2,
+            color: enabledForegroundColor,
+          ),
         ),
       ],
     );
@@ -108,24 +127,29 @@ class AppButton extends StatelessWidget {
 
   ButtonStyle _buildStyle(BuildContext context, AppColorRoles colors) {
     final isMedium = size == AppButtonSize.medium;
-    final visualHeight = isMedium ? 48.0 : 36.0;
-    final tapTargetHeight = math.max(visualHeight, _minTouchTarget);
+    final tapTargetHeight = math.max(size.visualHeight, _minTouchTarget);
     final horizontalPadding = isMedium ? AppSpacing.lg : AppSpacing.md;
     final accentColor = isDestructive ? colors.error : colors.primary;
     final enabledForeground = _enabledForegroundColor(colors);
-    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.full));
+    final shape = RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(AppRadius.full),
+    );
 
     return ButtonStyle(
       shape: WidgetStatePropertyAll(shape),
       minimumSize: WidgetStatePropertyAll(Size(0, tapTargetHeight)),
-      padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: horizontalPadding)),
+      padding: WidgetStatePropertyAll(
+        EdgeInsets.symmetric(horizontal: horizontalPadding),
+      ),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       elevation: const WidgetStatePropertyAll(0),
       side: emphasis == AppEmphasis.outline
           ? WidgetStateProperty.resolveWith(
               (states) => BorderSide(
                 color: states.contains(WidgetState.disabled)
-                    ? colors.onSurface.withValues(alpha: AppOpacity.disabledForeground)
+                    ? colors.onSurface.withValues(
+                        alpha: AppOpacity.disabledForeground,
+                      )
                     : accentColor,
                 width: AppBorderWidth.medium,
               ),
@@ -133,17 +157,22 @@ class AppButton extends StatelessWidget {
           : null,
       backgroundColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.disabled)) {
-          return colors.onSurface.withValues(alpha: AppOpacity.disabledBackground);
+          return colors.onSurface.withValues(
+            alpha: AppOpacity.disabledBackground,
+          );
         }
         return switch (emphasis) {
           AppEmphasis.solid => accentColor,
-          AppEmphasis.light => isDestructive ? colors.errorContainer : colors.primaryContainer,
+          AppEmphasis.light =>
+            isDestructive ? colors.errorContainer : colors.primaryContainer,
           AppEmphasis.outline => Colors.transparent,
         };
       }),
       foregroundColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.disabled)) {
-          return colors.onSurface.withValues(alpha: AppOpacity.disabledForeground);
+          return colors.onSurface.withValues(
+            alpha: AppOpacity.disabledForeground,
+          );
         }
         return enabledForeground;
       }),

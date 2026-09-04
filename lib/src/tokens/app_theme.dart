@@ -1,8 +1,7 @@
+import 'package:design_system/src/tokens/color_tokens.dart';
+import 'package:design_system/src/tokens/enums/app_brand.dart';
+import 'package:design_system/src/tokens/typography_tokens.dart';
 import 'package:flutter/material.dart';
-
-import 'color_tokens.dart';
-import 'enums/app_brand.dart';
-import 'typography_tokens.dart';
 
 /// Ready-to-use [ThemeData] built from the design system tokens. Any
 /// consumer app should use these instead of building its own [ThemeData],
@@ -11,9 +10,11 @@ import 'typography_tokens.dart';
 class AppTheme {
   const AppTheme._();
 
+  /// Builds the light-mode [ThemeData] for [brand].
   static ThemeData light({AppBrand brand = AppBrand.indigo}) =>
       _themeFor(Brightness.light, brand);
 
+  /// Builds the dark-mode [ThemeData] for [brand].
   static ThemeData dark({AppBrand brand = AppBrand.indigo}) =>
       _themeFor(Brightness.dark, brand);
 

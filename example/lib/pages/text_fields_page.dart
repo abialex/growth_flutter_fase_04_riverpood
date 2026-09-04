@@ -17,7 +17,10 @@ class TextFieldsPage extends StatelessWidget {
           const SizedBox(height: AppSpacing.sm),
           const AppTextField(hint: 'Text fill'),
           const SizedBox(height: AppSpacing.sm),
-          AppTextField(hint: 'Text fill', controller: TextEditingController(text: 'Text fill')),
+          AppTextField(
+            hint: 'Text fill',
+            controller: TextEditingController(text: 'Text fill'),
+          ),
           const SizedBox(height: AppSpacing.sm),
           AppTextField(
             hint: 'Solo lectura',
@@ -52,7 +55,10 @@ class TextFieldsPage extends StatelessWidget {
           const SizedBox(height: AppSpacing.lg),
           Text('Password fill', style: textTheme.titleMedium),
           const SizedBox(height: AppSpacing.sm),
-          AppPasswordField(hint: 'Contraseña', controller: TextEditingController(text: 'xxxxxxxxxx')),
+          AppPasswordField(
+            hint: 'Contraseña',
+            controller: TextEditingController(text: 'xxxxxxxxxx'),
+          ),
           const SizedBox(height: AppSpacing.sm),
           AppPasswordField(
             hint: 'Contraseña',
@@ -60,7 +66,10 @@ class TextFieldsPage extends StatelessWidget {
             errorText: 'Error',
           ),
           const SizedBox(height: AppSpacing.lg),
-          Text('Phone country area code dropdown fill', style: textTheme.titleMedium),
+          Text(
+            'Phone country area code dropdown fill',
+            style: textTheme.titleMedium,
+          ),
           const SizedBox(height: AppSpacing.sm),
           AppPhoneField(
             countryFlag: '🇵🇪',
