@@ -27,7 +27,7 @@ class AppTheme {
       useMaterial3: true,
       brightness: brightness,
       colorScheme: AppColorTokens.colorScheme(brightness, brand: brand),
-      textTheme: AppTypographyTokens.textTheme(brightness: brightness),
+      textTheme: AppTypographyTokens.textTheme(baseColor: colorRoles.onSurface),
       extensions: [colorRoles],
     );
   }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 /// Single source of truth for the type scale. Built on Material 3's
-/// [TextTheme] slots (display/headline/title/body/label, each in
-/// large/medium/small), themed with the Inter font family.
+/// [TextTheme] slots (display/headline/title/body/large/medium/small),
+/// themed with the Inter font family.
 ///
 /// Components must read styles from `Theme.of(context).textTheme`
 /// (populated by [AppTypographyTokens.textTheme]) instead of building
@@ -11,12 +11,13 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTypographyTokens {
   const AppTypographyTokens._();
 
-  /// Returns a [TextTheme] with the Inter font family and a base color
-  /// appropriate for the given [brightness].
-  static TextTheme textTheme({required Brightness brightness}) {
-    final baseColor = brightness == Brightness.light
-        ? const Color(0xFF1B1B1F)
-        : const Color(0xFFE4E1E6);
+  /// Returns a [TextTheme] with the Inter font family and [baseColor]
+  /// applied as the body/display color.
+  ///
+  /// [baseColor] should come from the resolved `AppColorRoles.onSurface`
+  /// for the current brand/brightness, so text color stays sourced from the
+  /// color token pipeline rather than a literal defined here.
+  static TextTheme textTheme({required Color baseColor}) {
     return GoogleFonts.interTextTheme().apply(
       bodyColor: baseColor,
       displayColor: baseColor,
