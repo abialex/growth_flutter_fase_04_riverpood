@@ -1,3 +1,9 @@
+## 0.2.2 - 2026-09-05
+
+- `AppButton`: el label (y los íconos leading/trailing) ignoraban el color de foreground calculado por variante (`onError`, `onErrorContainer`, `onPrimary`, etc.) porque `Text` usaba directamente `Theme.of(context).textTheme.labelLarge/labelMedium`, cuyo color viene fijado a `onSurface` por `AppTypographyTokens.textTheme`. En dark mode esto podía volver el texto casi ilegible sobre fondos de emphasis `light`/`solid` (por ejemplo, los botones destructivos). Ahora el color correcto (incluido el estado disabled) se aplica explícitamente vía `copyWith`/`color`.
+- `AppBanner`: el subrayado de la acción inline (`actionLabel`) se veía negro en vez del color del texto porque `TextStyle.decorationColor` no hereda `color` — hay que fijarlo aparte. Ahora `decorationColor` usa el mismo `style.foreground` que el resto del texto.
+- Ejemplo (`ShowcaseHomePage`): el ícono de "Toggle theme" no reflejaba el tema real cuando `themeMode` era `ThemeMode.system` (comparaba solo contra `ThemeMode.dark`); ahora deriva el brillo efectivo con `MediaQuery.platformBrightnessOf`. El `SegmentedButton` de marca partía "Orange" a mitad de palabra en pantallas angostas; se desactivó `showSelectedIcon` y se fijó `softWrap: false`/`TextOverflow.ellipsis` en los labels.
+
 ## 0.2.1 - 2026-09-05
 
 - `AppTypographyTokens.textTheme` ya no hardcodea el color base (`Color(0xFF1B1B1F)`/`Color(0xFFE4E1E6)`); recibe `baseColor` y `AppTheme` le pasa `AppColorRoles.onSurface`, resuelto por marca/brillo desde el pipeline de tokens.
