@@ -9,6 +9,10 @@ Este paquete **no se ejecuta por sí mismo**. Para ver todos los componentes y s
 - Dart `^3.9.2`
 - Flutter `>=1.17.0`
 
+## Calidad de código
+
+El paquete raíz lintea con [`very_good_analysis`](https://pub.dev/packages/very_good_analysis) (más estricto que `flutter_lints`, usado en `example/`).
+
 ## Instalación
 
 **Desde otro repo/proyecto** (por ejemplo, la app de fase 5), como dependencia git:
