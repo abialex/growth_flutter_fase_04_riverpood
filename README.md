@@ -22,8 +22,8 @@ dependencies:
   design_system:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
-      ref: main   # mejor un tag (ej. v0.1.0) una vez que existan releases,
-                  # para no arrastrar cambios de fase 4 sin querer
+      ref: v0.2.2   # usa un tag de release, no `main`, para no arrastrar
+                    # cambios sin querer — ver tags disponibles en el repo
 ```
 
 **Para trabajar en el paquete mismo** (este repo), como dependencia local desde `example/`:
