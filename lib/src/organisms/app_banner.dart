@@ -77,6 +77,7 @@ class AppBanner extends StatelessWidget {
                           color: style.foreground,
                           fontWeight: FontWeight.w700,
                           decoration: TextDecoration.underline,
+                          decorationColor: style.foreground,
                         ),
                       ),
                     ),

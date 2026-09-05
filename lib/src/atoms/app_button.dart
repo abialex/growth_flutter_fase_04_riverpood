@@ -75,7 +75,10 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = context.colors;
     final style = _buildStyle(context, colors);
-    final child = _buildChild(context, _enabledForegroundColor(colors));
+    final foreground = _isDisabled
+        ? colors.onSurface.withValues(alpha: AppOpacity.disabledForeground)
+        : _enabledForegroundColor(colors);
+    final child = _buildChild(context, foreground);
     final callback = _isDisabled ? null : onPressed;
 
     if (emphasis == AppEmphasis.outline) {
@@ -84,7 +87,7 @@ class AppButton extends StatelessWidget {
     return FilledButton(onPressed: callback, style: style, child: child);
   }
 
-  Widget _buildChild(BuildContext context, Color enabledForegroundColor) {
+  Widget _buildChild(BuildContext context, Color foregroundColor) {
     final isMedium = size == AppButtonSize.medium;
     final baseTextStyle = isMedium
         ? Theme.of(context).textTheme.labelLarge
@@ -94,13 +97,16 @@ class AppButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (leadingIcon != null) ...[
-          Icon(leadingIcon, size: AppIconSize.md),
+          Icon(leadingIcon, size: AppIconSize.md, color: foregroundColor),
           const SizedBox(width: AppSpacing.xs),
         ],
-        Text(label, style: baseTextStyle),
+        Text(
+          label,
+          style: baseTextStyle?.copyWith(color: foregroundColor),
+        ),
         if (trailingIcon != null) ...[
           const SizedBox(width: AppSpacing.xs),
-          Icon(trailingIcon, size: AppIconSize.md),
+          Icon(trailingIcon, size: AppIconSize.md, color: foregroundColor),
         ],
       ],
     );
@@ -118,7 +124,7 @@ class AppButton extends StatelessWidget {
           width: AppIconSize.md,
           child: CircularProgressIndicator(
             strokeWidth: 2,
-            color: enabledForegroundColor,
+            color: foregroundColor,
           ),
         ),
       ],
