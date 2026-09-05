@@ -76,7 +76,7 @@ class AppPhoneField extends StatelessWidget {
                 children: [
                   Text(
                     countryFlag,
-                    style: const TextStyle(fontSize: AppIconSize.md),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(width: AppSpacing.xs),
                   Text(
