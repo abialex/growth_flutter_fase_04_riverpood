@@ -1,14 +1,14 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class TagsPage extends StatefulWidget {
-  const TagsPage({super.key});
+class ChipsPage extends StatefulWidget {
+  const ChipsPage({super.key});
 
   @override
-  State<TagsPage> createState() => _TagsPageState();
+  State<ChipsPage> createState() => _ChipsPageState();
 }
 
-class _TagsPageState extends State<TagsPage> {
+class _ChipsPageState extends State<ChipsPage> {
   bool _isFilterSelected = false;
   final List<String> _inputTags = ['Flutter', 'Dart', 'Riverpod'];
 
@@ -17,7 +17,7 @@ class _TagsPageState extends State<TagsPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Tags')),
+      appBar: AppBar(title: const Text('Chips')),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.md),
         children: [

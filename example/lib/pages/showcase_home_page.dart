@@ -7,10 +7,10 @@ import '../providers/theme_mode_provider.dart';
 import 'banners_page.dart';
 import 'buttons_page.dart';
 import 'cards_page.dart';
+import 'chips_page.dart';
 import 'colors_page.dart';
 import 'loaders_page.dart';
 import 'spacing_page.dart';
-import 'tags_page.dart';
 import 'text_fields_page.dart';
 import 'typography_page.dart';
 
@@ -78,11 +78,11 @@ class ShowcaseHomePage extends ConsumerWidget {
                   onTap: () => _onOpenCategory(context, const ButtonsPage()),
                 ),
                 _CategoryTile(
-                  title: 'Tags',
+                  title: 'Chips',
                   subtitle:
                       'Chips de una sola etiqueta, mismas variantes que los botones',
                   icon: Icons.label_outline,
-                  onTap: () => _onOpenCategory(context, const TagsPage()),
+                  onTap: () => _onOpenCategory(context, const ChipsPage()),
                 ),
                 _CategoryTile(
                   title: 'Text fields',
