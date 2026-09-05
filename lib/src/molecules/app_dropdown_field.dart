@@ -39,7 +39,8 @@ class AppDropdownField<T> extends StatelessWidget {
   /// Label text to show above the dropdown. If `null`, no label is shown.
   final String? label;
 
-  /// Whether the dropdown is enabled. If `false`, the dropdown is disabled and
+  /// Whether the dropdown is enabled. If `false`, the dropdown is disabled
+  /// and does not respond to taps.
   final bool enabled;
 
   @override

@@ -18,6 +18,7 @@ class AppLoader extends StatelessWidget {
   final AppLoaderSize size;
 
   /// Optional label shown below the spinner. If `null` or empty, no label
+  /// is shown.
   final String? message;
 
   @override
