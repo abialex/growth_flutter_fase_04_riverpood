@@ -1,3 +1,11 @@
+## 0.2.1 - 2026-09-05
+
+- `AppTypographyTokens.textTheme` ya no hardcodea el color base (`Color(0xFF1B1B1F)`/`Color(0xFFE4E1E6)`); recibe `baseColor` y `AppTheme` le pasa `AppColorRoles.onSurface`, resuelto por marca/brillo desde el pipeline de tokens.
+- `AppPhoneField` ya no usa `AppIconSize.md` como `fontSize` del emoji de bandera (mezclaba la escala de íconos con la tipográfica); ahora toma `Theme.of(context).textTheme.titleLarge`.
+- Completados dos doc comments (`///`) que quedaban truncados a mitad de frase en `AppLoader.message` y `AppDropdownField.enabled`.
+- Página de ejemplo de `AppChip` renombrada de `TagsPage`/`tags_page.dart` a `ChipsPage`/`chips_page.dart` para que coincida con la categoría oficial "chips" en vez de "Tags".
+- README: mencionada la migración a `very_good_analysis` en el paquete raíz.
+
 ## 0.2.0 - 2026-09-04
 
 - **Breaking (instalación por `git:`)**: el paquete se movió de `packages/design_system` a la raíz del repo — mismo formato que `growth_flutter_fase_03_riverpood` (paquete en la raíz + `example/` como app consumidora), ya sin Melos. Quien dependa de este repo vía `git:` debe sacar el `path: packages/design_system` de su `pubspec.yaml` (la dependencia ahora apunta directo a la raíz del repo). La API pública (`design_system.dart` y sus exports) no cambió.
