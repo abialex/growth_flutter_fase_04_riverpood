@@ -1,6 +1,5 @@
-import 'package:app_ui_kit/src/molecules/app_text_field.dart'
-    show AppTextField;
-import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
+import 'package:app_ui_kit/src/molecules/internal/app_field_decoration.dart';
+import 'package:app_ui_kit/src/tokens/color_roles.dart';
 import 'package:app_ui_kit/src/tokens/color_tokens.dart';
 import 'package:app_ui_kit/src/tokens/icon_size_tokens.dart';
 import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
@@ -9,8 +8,8 @@ import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Phone number field with a leading country-code selector (flag + dial
-/// code + chevron), merged into a single filled pill-like container. Fills
-/// the available width, like [AppTextField].
+/// code + chevron), merged into the same filled field decoration used by the
+/// other text fields. Fills the available width.
 class AppPhoneField extends StatelessWidget {
   /// Creates a phone field. [countryFlag], [countryCode] and
   /// [onCountryTap] are required — everything else is optional.
@@ -56,69 +55,58 @@ class AppPhoneField extends StatelessWidget {
         ? colors.onSurface
         : colors.onSurface.withValues(alpha: AppOpacity.disabledForeground);
 
-    return Material(
-      color: colors.surface,
-      borderRadius: BorderRadius.circular(AppRadius.lg),
-      child: Row(
-        children: [
-          InkWell(
-            borderRadius: const BorderRadius.horizontal(
-              left: Radius.circular(AppRadius.lg),
+    return TextField(
+      controller: controller,
+      enabled: enabled,
+      keyboardType: TextInputType.phone,
+      onChanged: onChanged,
+      style: TextStyle(color: textColor),
+      decoration: buildAppFieldDecoration(
+        colors: colors,
+        hintText: hint,
+        isDisabled: !enabled,
+        prefixIcon: _buildCountrySelector(context, colors, textColor),
+      ),
+    );
+  }
+
+  Widget _buildCountrySelector(
+    BuildContext context,
+    AppColorRoles colors,
+    Color textColor,
+  ) {
+    return InkWell(
+      borderRadius: const BorderRadius.horizontal(
+        left: Radius.circular(AppRadius.lg),
+      ),
+      onTap: enabled ? onCountryTap : null,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.sm,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              countryFlag,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-            onTap: enabled ? onCountryTap : null,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.md,
-                vertical: AppSpacing.sm,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    countryFlag,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(width: AppSpacing.xs),
-                  Text(
-                    countryCode,
-                    style: TextStyle(
-                      color: textColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    color: colors.primary,
-                    size: AppIconSize.md,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Container(
-            width: AppBorderWidth.thin,
-            height: AppSpacing.lg,
-            color: colors.onSurface.withValues(alpha: AppOpacity.border),
-          ),
-          Expanded(
-            child: TextField(
-              controller: controller,
-              enabled: enabled,
-              keyboardType: TextInputType.phone,
-              onChanged: onChanged,
-              style: TextStyle(color: textColor),
-              decoration: InputDecoration(
-                hintText: hint,
-                hintStyle: TextStyle(color: colors.primary),
-                border: InputBorder.none,
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.md,
-                  vertical: AppSpacing.sm,
-                ),
+            const SizedBox(width: AppSpacing.xs),
+            Text(
+              countryCode,
+              style: TextStyle(
+                color: textColor,
+                fontWeight: FontWeight.w600,
               ),
             ),
-          ),
-        ],
+            Icon(
+              Icons.keyboard_arrow_down,
+              color: colors.primary,
+              size: AppIconSize.md,
+            ),
+          ],
+        ),
       ),
     );
   }
