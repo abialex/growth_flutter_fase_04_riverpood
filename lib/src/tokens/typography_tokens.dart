@@ -1,3 +1,5 @@
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/enums/app_brand.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +13,18 @@ import 'package:google_fonts/google_fonts.dart';
 /// depend on runtime network access.
 class AppTypographyTokens {
   const AppTypographyTokens._();
+
+  /// Returns the light-mode [TextTheme] for [brand] without requiring a
+  /// [BuildContext].
+  static TextTheme light({AppBrand brand = AppBrand.indigo}) {
+    return textTheme(baseColor: AppColorTokens.light(brand: brand).onSurface);
+  }
+
+  /// Returns the dark-mode [TextTheme] for [brand] without requiring a
+  /// [BuildContext].
+  static TextTheme dark({AppBrand brand = AppBrand.indigo}) {
+    return textTheme(baseColor: AppColorTokens.dark(brand: brand).onSurface);
+  }
 
   /// Returns a [TextTheme] with the Inter font family and [baseColor]
   /// applied as the body/display color.

@@ -64,9 +64,13 @@ context.colors.errorContainer
 AppBrand.indigo | AppBrand.orange
 AppEmphasis.solid | AppEmphasis.light | AppEmphasis.outline
 
-// Tipografía — sale del ThemeData que arma AppTheme, no TextStyle inline
+// Tipografía con contexto — sale del ThemeData que arma AppTheme
 Theme.of(context).textTheme.titleMedium
 Theme.of(context).textTheme.bodyLarge
+
+// Tipografía sin contexto — usa los mismos tokens y roles de color
+final textTheme = AppTypographyTokens.light(brand: AppBrand.indigo);
+Text('Título', style: textTheme.titleMedium)
 
 // Espaciado y radios
 AppSpacing.md    // 16
