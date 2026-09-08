@@ -1,7 +1,3 @@
-import 'package:app_ui_kit/app_ui_kit.dart'
-    show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
-import 'package:app_ui_kit/src/molecules/molecules.dart'
-    show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
 import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
 import 'package:app_ui_kit/src/tokens/color_roles.dart';
 import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
@@ -10,8 +6,7 @@ import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Shared, filled-style [InputDecoration] used by every text-field-family
-/// molecule ([AppTextField], [AppPasswordField], [AppDropdownField],
-/// [AppPhoneField]) so they stay visually consistent.
+/// molecule so they stay visually consistent.
 InputDecoration buildAppFieldDecoration({
   required AppColorRoles colors,
   String? hintText,

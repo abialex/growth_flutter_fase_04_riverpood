@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart' show Icon;
 import 'package:flutter/material.dart' show Icon;
-import 'package:flutter/widgets.dart' show Icon;
 
 /// Icon size scale. Use instead of a hardcoded `size:` on any [Icon].
 class AppIconSize {

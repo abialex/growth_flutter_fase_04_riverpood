@@ -1,13 +1,9 @@
-import 'package:app_ui_kit/app_ui_kit.dart' show AppTextField;
 import 'package:app_ui_kit/src/molecules/app_dropdown_item.dart';
-import 'package:app_ui_kit/src/molecules/app_text_field.dart'
-    show AppTextField;
 import 'package:app_ui_kit/src/molecules/internal/app_field_decoration.dart';
-import 'package:app_ui_kit/src/molecules/molecules.dart' show AppTextField;
 import 'package:app_ui_kit/src/tokens/color_tokens.dart';
 import 'package:flutter/material.dart';
 
-/// Filled dropdown field, styled to match [AppTextField].
+/// Filled dropdown field, styled to match the text-field family.
 class AppDropdownField<T> extends StatelessWidget {
   /// Creates a dropdown field. [items] is required, and [onChanged] is called
   /// when the user selects a new value. [initialValue] is optional, and if
