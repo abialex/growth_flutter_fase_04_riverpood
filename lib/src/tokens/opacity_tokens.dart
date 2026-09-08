@@ -22,4 +22,7 @@ class AppOpacity {
   /// `hoverColor` tint over `primary` for interactive components
   /// (buttons, chips).
   static const double hover = 0.08;
+
+  /// Secondary text opacity used for descriptive supporting content.
+  static const double secondaryText = 0.7;
 }

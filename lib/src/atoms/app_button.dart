@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:app_ui_kit/src/atoms/enums/app_button_size.dart';
+import 'package:app_ui_kit/src/tokens/app_button_tokens.dart';
 import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
 import 'package:app_ui_kit/src/tokens/color_roles.dart';
 import 'package:app_ui_kit/src/tokens/color_tokens.dart';
@@ -10,11 +11,6 @@ import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
 import 'package:app_ui_kit/src/tokens/radius_tokens.dart';
 import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
-
-/// Minimum logical tap target per accessibility guidelines. The visible
-/// pill can be smaller (`small`/micro is 36dp tall); the tappable area
-/// never is.
-const double _minTouchTarget = 44;
 
 /// Pill-shaped button. [emphasis] controls the color treatment
 /// (solid/light/outline) and [size] the height (medium/small). Passing
@@ -123,7 +119,7 @@ class AppButton extends StatelessWidget {
           height: AppIconSize.md,
           width: AppIconSize.md,
           child: CircularProgressIndicator(
-            strokeWidth: 2,
+            strokeWidth: AppButtonTokens.loadingIndicatorStrokeWidth,
             color: foregroundColor,
           ),
         ),
@@ -133,7 +129,10 @@ class AppButton extends StatelessWidget {
 
   ButtonStyle _buildStyle(BuildContext context, AppColorRoles colors) {
     final isMedium = size == AppButtonSize.medium;
-    final tapTargetHeight = math.max(size.visualHeight, _minTouchTarget);
+    final tapTargetHeight = math.max(
+      size.visualHeight,
+      AppButtonTokens.minTouchTarget,
+    );
     final horizontalPadding = isMedium ? AppSpacing.lg : AppSpacing.md;
     final accentColor = isDestructive ? colors.error : colors.primary;
     final enabledForeground = _enabledForegroundColor(colors);

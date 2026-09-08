@@ -1,3 +1,4 @@
+import 'package:app_ui_kit/src/tokens/app_button_tokens.dart';
 import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 
 /// [medium] matches the "secondary button" mockups (48dp tall).
@@ -10,10 +11,9 @@ enum AppButtonSize {
   small;
 
   /// Visual height for this size. `medium` reuses [AppSpacing.xxl] (48dp);
-  /// `small` (36dp) has no equivalent in the spacing scale, so it stays a
-  /// documented literal instead of forcing a token that doesn't fit.
+  /// `small` uses the component token defined for its visual contract.
   double get visualHeight => switch (this) {
     AppButtonSize.medium => AppSpacing.xxl,
-    AppButtonSize.small => 36,
+    AppButtonSize.small => AppButtonTokens.smallHeight,
   };
 }

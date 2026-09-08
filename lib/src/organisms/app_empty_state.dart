@@ -69,7 +69,9 @@ class AppEmptyState extends StatelessWidget {
             Text(
               descriptionText,
               style: textTheme.bodyMedium?.copyWith(
-                color: colors.onSurface.withValues(alpha: 0.7),
+                color: colors.onSurface.withValues(
+                  alpha: AppOpacity.secondaryText,
+                ),
               ),
               textAlign: TextAlign.center,
             ),
