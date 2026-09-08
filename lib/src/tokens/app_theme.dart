@@ -1,6 +1,6 @@
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/enums/app_brand.dart';
-import 'package:design_system/src/tokens/typography_tokens.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/enums/app_brand.dart';
+import 'package:app_ui_kit/src/tokens/typography_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Ready-to-use [ThemeData] built from the design system tokens. Any

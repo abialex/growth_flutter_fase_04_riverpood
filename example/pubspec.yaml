@@ -1,5 +1,5 @@
 name: showcase
-description: "Showcase app that documents the design_system component library."
+description: "Showcase app that documents the app_ui_kit component library."
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
-  design_system:
+  app_ui_kit:
     path: ../
 
 dev_dependencies:

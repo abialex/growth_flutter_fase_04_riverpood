@@ -1,12 +1,12 @@
-import 'package:design_system/design_system.dart'
+import 'package:app_ui_kit/app_ui_kit.dart'
     show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
-import 'package:design_system/src/molecules/molecules.dart'
+import 'package:app_ui_kit/src/molecules/molecules.dart'
     show AppDropdownField, AppPasswordField, AppPhoneField, AppTextField;
-import 'package:design_system/src/tokens/border_width_tokens.dart';
-import 'package:design_system/src/tokens/color_roles.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
-import 'package:design_system/src/tokens/radius_tokens.dart';
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
+import 'package:app_ui_kit/src/tokens/color_roles.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/tokens/radius_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Shared, filled-style [InputDecoration] used by every text-field-family

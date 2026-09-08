@@ -1,6 +1,6 @@
-import 'package:design_system/src/molecules/internal/app_field_decoration.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/molecules/internal/app_field_decoration.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Password text field with a show/hide toggle. `errorText` != null

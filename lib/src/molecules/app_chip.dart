@@ -1,9 +1,9 @@
-import 'package:design_system/src/molecules/enums/app_chip_type.dart';
-import 'package:design_system/src/tokens/border_width_tokens.dart';
-import 'package:design_system/src/tokens/color_roles.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/enums/app_emphasis.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/molecules/enums/app_chip_type.dart';
+import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
+import 'package:app_ui_kit/src/tokens/color_roles.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/enums/app_emphasis.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Pill-shaped chip. [type] `assist` (default) is a plain tag — pass

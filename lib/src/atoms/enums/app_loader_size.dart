@@ -1,4 +1,4 @@
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 
 /// [small] is meant to sit inline (e.g. inside a button). [medium] and
 /// [large] are for section/full-screen loading states.

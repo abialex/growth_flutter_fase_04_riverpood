@@ -1,11 +1,11 @@
-import 'package:design_system/design_system.dart' show AppButton, AppChip;
-import 'package:design_system/src/molecules/enums/app_card_variant.dart';
-import 'package:design_system/src/tokens/border_width_tokens.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/elevation_tokens.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
-import 'package:design_system/src/tokens/radius_tokens.dart';
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/app_ui_kit.dart' show AppButton, AppChip;
+import 'package:app_ui_kit/src/molecules/enums/app_card_variant.dart';
+import 'package:app_ui_kit/src/tokens/border_width_tokens.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/elevation_tokens.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/tokens/radius_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Card container. [variant] `filled` defaults to `primaryContainer`

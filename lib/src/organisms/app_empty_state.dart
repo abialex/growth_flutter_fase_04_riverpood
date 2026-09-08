@@ -1,9 +1,9 @@
-import 'package:design_system/src/atoms/app_button.dart';
-import 'package:design_system/src/atoms/enums/app_button_size.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/icon_size_tokens.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/atoms/app_button.dart';
+import 'package:app_ui_kit/src/atoms/enums/app_button_size.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/icon_size_tokens.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Reusable placeholder for "nothing to show" states — no search results,

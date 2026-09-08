@@ -1,9 +1,9 @@
-import 'package:design_system/src/organisms/enums/app_banner_variant.dart';
-import 'package:design_system/src/tokens/color_roles.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/icon_size_tokens.dart';
-import 'package:design_system/src/tokens/radius_tokens.dart';
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/organisms/enums/app_banner_variant.dart';
+import 'package:app_ui_kit/src/tokens/color_roles.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/icon_size_tokens.dart';
+import 'package:app_ui_kit/src/tokens/radius_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Inline message banner. [variant] selects color + icon from tokens.

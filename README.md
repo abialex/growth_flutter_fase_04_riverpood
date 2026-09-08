@@ -1,4 +1,4 @@
-# design_system
+# app_ui_kit
 
 Sistema de diseño reutilizable para Flutter: tokens visuales (color, tipografía, espaciado, radios) y componentes construidos sobre ellos, organizados con Atomic Design. Soporta dos marcas intercambiables (`AppBrand.indigo` / `AppBrand.orange`) y light/dark en ambas.
 
@@ -19,7 +19,7 @@ El paquete raíz lintea con [`very_good_analysis`](https://pub.dev/packages/very
 
 ```yaml
 dependencies:
-  design_system:
+  app_ui_kit:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
       ref: v0.2.2   # usa un tag de release, no `main`, para no arrastrar
@@ -30,7 +30,7 @@ dependencies:
 
 ```yaml
 dependencies:
-  design_system:
+  app_ui_kit:
     path: ../
 ```
 
@@ -39,7 +39,7 @@ dependencies:
 Todo se importa desde un único barrel. Un solo `AppTheme` arma el `ThemeData` completo (colores, tipografía) para `MaterialApp`:
 
 ```dart
-import 'package:design_system/design_system.dart';
+import 'package:app_ui_kit/app_ui_kit.dart';
 
 MaterialApp(
   theme: AppTheme.light(brand: AppBrand.indigo),
@@ -209,7 +209,7 @@ La app showcase (`example/`) está organizada por categoría y muestra cada comp
 
 ```
 lib/
-├── design_system.dart      # barrel público del paquete
+├── app_ui_kit.dart      # barrel público del paquete
 └── src/
     ├── tokens/              # color (2 marcas), tipografía, espaciado, radios, elevation, iconos, opacidad
     ├── atoms/                # AppButton, AppLoader
@@ -217,7 +217,7 @@ lib/
     └── organisms/            # AppBanner, AppEmptyState
 ```
 
-Cada capa expone un barrel (`tokens.dart`, `atoms.dart`, `molecules.dart`, `organisms.dart`) re-exportado desde `design_system.dart`.
+Cada capa expone un barrel (`tokens.dart`, `atoms.dart`, `molecules.dart`, `organisms.dart`) re-exportado desde `app_ui_kit.dart`.
 
 ### Contribuir un componente nuevo
 

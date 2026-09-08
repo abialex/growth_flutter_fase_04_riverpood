@@ -1,6 +1,6 @@
-import 'package:design_system/design_system.dart' show AppDropdownField;
-import 'package:design_system/src/molecules/app_dropdown_field.dart' show AppDropdownField;
-import 'package:design_system/src/molecules/molecules.dart' show AppDropdownField;
+import 'package:app_ui_kit/app_ui_kit.dart' show AppDropdownField;
+import 'package:app_ui_kit/src/molecules/app_dropdown_field.dart' show AppDropdownField;
+import 'package:app_ui_kit/src/molecules/molecules.dart' show AppDropdownField;
 
 /// One selectable option for [AppDropdownField].
 class AppDropdownItem<T> {

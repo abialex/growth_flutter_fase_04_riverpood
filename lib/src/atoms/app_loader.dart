@@ -1,6 +1,6 @@
-import 'package:design_system/src/atoms/enums/app_loader_size.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/atoms/enums/app_loader_size.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Indeterminate circular loader. See [AppLoaderSize.diameter] for how each

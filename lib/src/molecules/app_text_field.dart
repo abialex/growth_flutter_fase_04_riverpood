@@ -1,7 +1,7 @@
-import 'package:design_system/src/molecules/app_password_field.dart';
-import 'package:design_system/src/molecules/internal/app_field_decoration.dart';
-import 'package:design_system/src/tokens/color_tokens.dart';
-import 'package:design_system/src/tokens/opacity_tokens.dart';
+import 'package:app_ui_kit/src/molecules/app_password_field.dart';
+import 'package:app_ui_kit/src/molecules/internal/app_field_decoration.dart';
+import 'package:app_ui_kit/src/tokens/color_tokens.dart';
+import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
 import 'package:flutter/material.dart';
 
 /// Filled, borderless-by-default text field. `errorText` != null switches

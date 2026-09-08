@@ -1,4 +1,4 @@
-import 'package:design_system/src/tokens/spacing_tokens.dart';
+import 'package:app_ui_kit/src/tokens/spacing_tokens.dart';
 
 /// [medium] matches the "secondary button" mockups (48dp tall).
 /// [small] matches the "micro button" mockups (36dp tall).
