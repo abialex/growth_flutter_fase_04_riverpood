@@ -7,7 +7,7 @@ Este paquete **no se ejecuta por sí mismo**. Para ver todos los componentes y s
 ## Requisitos
 
 - Dart `^3.9.2`
-- Flutter `>=1.17.0`
+- Flutter `>=3.35.0`
 
 ## Calidad de código
 
