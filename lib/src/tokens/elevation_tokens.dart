@@ -8,6 +8,9 @@ class AppElevation {
   /// 2dp — for low elevation components (e.g. cards, buttons, chips).
   static const double low = 2;
 
-  /// 4dp — for medium elevation components (e.g. cards, buttons, chips).
-  static const double high = 8;
+  /// 4dp — for high elevation components (e.g. cards, buttons, chips).
+  static const double high = 4;
+
+  /// 8dp — for extra-high elevation components.
+  static const double xHigh = 8;
 }
