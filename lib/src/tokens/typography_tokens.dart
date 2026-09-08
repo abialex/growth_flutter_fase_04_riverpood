@@ -7,7 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 ///
 /// Components must read styles from `Theme.of(context).textTheme`
 /// (populated by [AppTypographyTokens.textTheme]) instead of building
-/// [TextStyle]s inline.
+/// [TextStyle]s inline. Inter is bundled locally so the design system does not
+/// depend on runtime network access.
 class AppTypographyTokens {
   const AppTypographyTokens._();
 
@@ -18,6 +19,8 @@ class AppTypographyTokens {
   /// for the current brand/brightness, so text color stays sourced from the
   /// color token pipeline rather than a literal defined here.
   static TextTheme textTheme({required Color baseColor}) {
+    GoogleFonts.config.allowRuntimeFetching = false;
+
     return GoogleFonts.interTextTheme().apply(
       bodyColor: baseColor,
       displayColor: baseColor,

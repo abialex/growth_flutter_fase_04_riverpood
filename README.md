@@ -48,6 +48,8 @@ MaterialApp(
 );
 ```
 
+La tipografía usa únicamente Inter, empaquetada localmente mediante `google_fonts`, sin descargas durante la ejecución.
+
 ## Uso
 
 ### Tokens y enums
