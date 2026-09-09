@@ -19,9 +19,19 @@ InputDecoration buildAppFieldDecoration({
 }) {
   final hasError = errorText != null && errorText.isNotEmpty;
   final borderRadius = BorderRadius.circular(AppRadius.lg);
-  final noBorder = OutlineInputBorder(
+  final defaultBorder = OutlineInputBorder(
     borderRadius: borderRadius,
-    borderSide: BorderSide.none,
+    borderSide: BorderSide(
+      color: colors.onSurface.withValues(alpha: AppOpacity.border),
+      width: AppBorderWidth.thin,
+    ),
+  );
+  final errorBorder = OutlineInputBorder(
+    borderRadius: borderRadius,
+    borderSide: BorderSide(
+      color: colors.error,
+      width: AppBorderWidth.thin,
+    ),
   );
 
   final backgroundColor = isDisabled
@@ -52,10 +62,10 @@ InputDecoration buildAppFieldDecoration({
       horizontal: AppSpacing.md,
       vertical: AppSpacing.sm,
     ),
-    border: noBorder,
-    enabledBorder: noBorder,
-    disabledBorder: noBorder,
-    errorBorder: noBorder,
+    border: defaultBorder,
+    enabledBorder: defaultBorder,
+    disabledBorder: defaultBorder,
+    errorBorder: errorBorder,
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
       borderSide: BorderSide(

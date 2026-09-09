@@ -4,8 +4,8 @@ import 'package:app_ui_kit/src/tokens/color_tokens.dart';
 import 'package:app_ui_kit/src/tokens/opacity_tokens.dart';
 import 'package:flutter/material.dart';
 
-/// Filled, borderless-by-default text field. `errorText` != null switches
-/// it into the error visual state (tinted background, red helper text).
+/// Filled text field with a visible border. `errorText` != null switches it
+/// into the error visual state (tinted background, red helper text).
 /// Pass [maxLength] to show a character counter, [readOnly] for a
 /// display-only field that still looks interactive.
 class AppTextField extends StatelessWidget {
