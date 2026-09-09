@@ -91,8 +91,30 @@ class AppColorTokens {
     Brightness brightness, {
     AppBrand brand = AppBrand.indigo,
   }) {
-    final seed = brand == AppBrand.indigo ? AppColorPrimitives.indigoSeed : AppColorPrimitives.orangeSeed;
-    return ColorScheme.fromSeed(seedColor: seed, brightness: brightness);
+    final roles = brightness == Brightness.light
+        ? light(brand: brand)
+        : dark(brand: brand);
+    final seed = brand == AppBrand.indigo
+        ? AppColorPrimitives.indigoSeed
+        : AppColorPrimitives.orangeSeed;
+    return ColorScheme.fromSeed(
+      seedColor: seed,
+      brightness: brightness,
+    ).copyWith(
+      primary: roles.primary,
+      onPrimary: roles.onPrimary,
+      primaryContainer: roles.primaryContainer,
+      onPrimaryContainer: roles.onPrimaryContainer,
+      secondary: roles.secondary,
+      onSecondary: roles.onSecondary,
+      surface: roles.surface,
+      onSurface: roles.onSurface,
+      error: roles.error,
+      onError: roles.onError,
+      errorContainer: roles.errorContainer,
+      onErrorContainer: roles.onErrorContainer,
+      surfaceTint: roles.primary,
+    );
   }
 }
 
@@ -100,10 +122,13 @@ class AppColorTokens {
 extension AppColorRolesContext on BuildContext {
   /// Returns the [AppColorRoles] for the current [ThemeData.brightness] and
   /// [AppBrand] (from [ThemeData.extensions]). Falls back to the indigo
-  /// brand if no [AppColorRoles] is found.
+  /// brand for the current brightness if no [AppColorRoles] is found.
   AppColorRoles get colors {
-    final roles = Theme.of(this).extension<AppColorRoles>();
+    final theme = Theme.of(this);
+    final roles = theme.extension<AppColorRoles>();
     if (roles != null) return roles;
-    return AppColorTokens.light();
+    return theme.brightness == Brightness.dark
+        ? AppColorTokens.dark()
+        : AppColorTokens.light();
   }
 }
