@@ -22,7 +22,7 @@ dependencies:
   app_ui_kit:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
-      ref: v0.2.2   # usa un tag de release, no `main`, para no arrastrar
+      ref: v0.3.0   # usa un tag de release, no `master`, para no arrastrar
                     # cambios sin querer — ver tags disponibles en el repo
 ```
 
