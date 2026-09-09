@@ -209,6 +209,39 @@ flutter run -d chrome
 
 La app showcase (`example/`) está organizada por categoría y muestra cada componente con todas sus variantes y estados.
 
+## Vista previa del Showcase
+
+Las siguientes capturas están versionadas dentro de `assets/showcase`, por lo
+que no dependen de enlaces externos ni de archivos temporales.
+
+### Vista general
+
+<p align="center">
+  <img src="assets/showcase/show_case.gif" width="420" alt="Vista general animada del Showcase completo">
+</p>
+
+<table>
+  <tr>
+    <td align="center"><strong>Colores</strong><br><img src="assets/showcase/growhub-1-colours.png" width="280" alt="Roles de color del sistema, incluyendo primary, surface, error, success y warning"></td>
+    <td align="center"><strong>Tipografía</strong><br><img src="assets/showcase/growhub-2-typhografy.png" width="280" alt="Escala tipográfica Inter del sistema de diseño"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Espaciado y radios</strong><br><img src="assets/showcase/growhub-3-spacings.png" width="280" alt="Escala de espaciado y radios del sistema"></td>
+    <td align="center"><strong>Botones</strong><br><img src="assets/showcase/growhub-4-buttons.png" width="280" alt="Variantes y estados de AppButton"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Chips</strong><br><img src="assets/showcase/growhub-5-chips.png" width="280" alt="Variantes assist, filter e input de AppChip"></td>
+    <td align="center"><strong>Campos</strong><br><img src="assets/showcase/growhub-6-textfield.png" width="280" alt="Familia de campos de texto, dropdown, password y phone con bordes visibles"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Tarjetas</strong><br><img src="assets/showcase/growhub-7-cards.png" width="280" alt="Variantes filled, elevated y outlined de AppCard"></td>
+    <td align="center"><strong>Loaders</strong><br><img src="assets/showcase/growhub-8-loaders.png" width="280" alt="Tamaños de AppLoader y loader con mensaje"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><strong>Banners y estados vacíos</strong><br><img src="assets/showcase/growhub-9-banners_empty_state.gif" width="420" alt="Banners y estados vacíos del Showcase"></td>
+  </tr>
+</table>
+
 ## Arquitectura
 
 > Detalle interno del paquete — no hace falta para usarlo, solo para contribuirle.
