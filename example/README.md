@@ -14,7 +14,7 @@ Requiere haber corrido `flutter pub get` en esta carpeta (`example/`) al menos u
 
 ## Qué muestra
 
-- **Colores** — roles semánticos (`context.colors`) generados desde el color semilla, para ambas marcas.
+- **Colores** — roles semánticos con `context.colors` y `AppColors.resolve(brightness:, brand:)`, para ambas marcas y modos.
 - **Tipografía** — escala Material (display/headline/title/body/label) con Inter.
 - **Espaciados y radios** — escala de 4dp y radios de borde.
 - **Botones** — tamaños secundario/micro, variantes light/solid/outline y destructive.

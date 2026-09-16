@@ -1,14 +1,29 @@
 import 'package:app_ui_kit/app_ui_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ColorsPage extends StatelessWidget {
+import '../providers/brand_provider.dart';
+
+class ColorsPage extends ConsumerWidget {
   const ColorsPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final currentBrightness = Theme.of(context).brightness;
+    final currentBrand = ref.watch(brandProvider);
     final colors = context.colors;
+    final resolvedColors = AppColors.resolve(
+      brightness: currentBrightness,
+      brand: currentBrand,
+    );
 
     final swatches = <_ColorSwatchData>[
+      _ColorSwatchData(
+        'AppColors.resolve(...).primary',
+        resolvedColors.primary,
+        'onPrimary',
+        resolvedColors.onPrimary,
+      ),
       _ColorSwatchData(
         'primary',
         colors.primary,

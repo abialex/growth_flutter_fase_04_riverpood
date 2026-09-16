@@ -1,3 +1,4 @@
+import 'package:app_ui_kit/src/tokens/app_colors.dart';
 import 'package:app_ui_kit/src/tokens/color_tokens.dart';
 import 'package:app_ui_kit/src/tokens/enums/app_brand.dart';
 import 'package:app_ui_kit/src/tokens/typography_tokens.dart';
@@ -19,9 +20,7 @@ class AppTheme {
       _themeFor(Brightness.dark, brand);
 
   static ThemeData _themeFor(Brightness brightness, AppBrand brand) {
-    final colorRoles = brightness == Brightness.light
-        ? AppColorTokens.light(brand: brand)
-        : AppColorTokens.dark(brand: brand);
+    final colorRoles = AppColors.resolve(brightness: brightness, brand: brand);
 
     return ThemeData(
       useMaterial3: true,

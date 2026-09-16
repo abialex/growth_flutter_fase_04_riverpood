@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-15
+
+### Added
+
+- Added `AppColors` role shortcuts for the default light Indigo palette and
+  `AppColors.resolve(...)` for resolving roles by brightness and brand without
+  a `BuildContext`.
+- Updated the color showcase to demonstrate resolving the active brightness and
+  brand alongside `context.colors`.
+
+### Changed
+
+- Updated `AppTheme` to use `AppColors.resolve(...)` so themed and explicit
+  color resolution share the same role pipeline.
+
 ## [0.3.0] - 2026-09-09
 
 ### Added
@@ -114,7 +129,8 @@ First usable version of the design system.
 
 * Initial package skeleton (no components).
 
-[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.4.0
 [0.3.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.3.0
 [0.2.2]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.2.2
 [0.2.1]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.2.1

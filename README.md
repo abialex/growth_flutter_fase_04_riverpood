@@ -22,7 +22,7 @@ dependencies:
   app_ui_kit:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
-      ref: v0.3.0   # usa un tag de release, no `master`, para no arrastrar
+      ref: v0.4.0   # usa un tag de release, no `master`, para no arrastrar
                     # cambios sin querer — ver tags disponibles en el repo
 ```
 
@@ -52,14 +52,57 @@ La tipografía usa únicamente Inter, empaquetada localmente mediante `google_fo
 
 ## Uso
 
+### Colores
+
+Dentro de un widget, `context.colors` sigue el brillo y la marca del `AppTheme` activo:
+
+```dart
+import 'package:app_ui_kit/app_ui_kit.dart';
+import 'package:flutter/material.dart';
+
+class ThemeAwareColors extends StatelessWidget {
+  const ThemeAwareColors({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.colors;
+    return ColoredBox(
+      color: colors.surface,
+      child: Text('Contenido', style: TextStyle(color: colors.onSurface)),
+    );
+  }
+}
+```
+
+Sin `BuildContext`, resuelve los roles con `AppColors.resolve`. Si omites los
+argumentos, usa `Brightness.light` y `AppBrand.indigo`; para una marca o modo
+distinto, pasa los valores actuales de tu app:
+
+```dart
+import 'package:app_ui_kit/app_ui_kit.dart';
+import 'package:flutter/material.dart';
+
+final defaultColors = AppColors.resolve();
+final defaultPrimary = AppColors.primary;
+final colors = AppColors.resolve(
+  brightness: Brightness.dark,
+  brand: AppBrand.orange,
+);
+final primary = colors.primary;
+final onPrimary = colors.onPrimary;
+```
+
+`AppColors.primary` también está disponible como atajo para el valor
+predeterminado light/indigo. Es fijo; para que los colores sigan los cambios de
+modo o marca, el consumidor debe obtener el `Brightness` y `AppBrand` actuales
+de su tema o estado y pasarlos a `AppColors.resolve`. Cuando esos valores
+cambien, vuelve a resolver la paleta. Usa juntos los roles relacionados —por
+ejemplo, `primary` y `onPrimary`— para mantenerlos en la misma combinación de
+brillo y marca.
+
 ### Tokens y enums
 
 ```dart
-// Colores — siempre vía context, nunca Color(0x...) hardcodeado
-context.colors.primary
-context.colors.onPrimaryContainer
-context.colors.errorContainer
-
 // Enums disponibles
 AppBrand.indigo | AppBrand.orange
 AppEmphasis.solid | AppEmphasis.light | AppEmphasis.outline
