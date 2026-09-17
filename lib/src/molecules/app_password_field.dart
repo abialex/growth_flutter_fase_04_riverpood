@@ -16,6 +16,9 @@ class AppPasswordField extends StatefulWidget {
     this.helperText,
     this.errorText,
     this.enabled = true,
+    this.keyboardType = TextInputType.visiblePassword,
+    this.textInputAction,
+    this.autofillHints,
     this.onChanged,
   });
 
@@ -38,6 +41,15 @@ class AppPasswordField extends StatefulWidget {
 
   /// Whether the field accepts input. `false` renders it disabled.
   final bool enabled;
+
+  /// Keyboard type shown for this field.
+  final TextInputType keyboardType;
+
+  /// Action shown on the software keyboard.
+  final TextInputAction? textInputAction;
+
+  /// Autofill semantics exposed to the operating system.
+  final Iterable<String>? autofillHints;
 
   /// Called with the current text every time it changes.
   final ValueChanged<String>? onChanged;
@@ -69,6 +81,9 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
       controller: widget.controller,
       enabled: widget.enabled,
       obscureText: _isObscured,
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.textInputAction,
+      autofillHints: widget.autofillHints,
       onChanged: widget.onChanged,
       style: TextStyle(color: textColor),
       decoration: buildAppFieldDecoration(

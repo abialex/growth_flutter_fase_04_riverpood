@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-09-16
+
+### Added
+
+- Added keyboard actions and operating-system autofill hints to text fields.
+- Set `AppPasswordField` to use the visible-password keyboard by default.
+
 ## [0.5.1] - 2026-09-16
 
 ### Fixed
@@ -145,7 +152,8 @@ First usable version of the design system.
 
 * Initial package skeleton (no components).
 
-[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.6.0
 [0.5.1]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.1
 [0.5.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.0
 [0.4.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.4.0

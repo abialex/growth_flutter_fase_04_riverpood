@@ -22,6 +22,8 @@ class AppTextField extends StatelessWidget {
     this.readOnly = false,
     this.obscureText = false,
     this.keyboardType,
+    this.textInputAction,
+    this.autofillHints,
     this.maxLength,
     this.onChanged,
     this.onTap,
@@ -60,6 +62,12 @@ class AppTextField extends StatelessWidget {
   /// Keyboard type shown for this field (e.g. numeric, email).
   final TextInputType? keyboardType;
 
+  /// Action shown on the software keyboard.
+  final TextInputAction? textInputAction;
+
+  /// Autofill semantics exposed to the operating system.
+  final Iterable<String>? autofillHints;
+
   /// Maximum character count. When set, shows a counter below the field.
   final int? maxLength;
 
@@ -88,6 +96,8 @@ class AppTextField extends StatelessWidget {
       readOnly: readOnly,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      textInputAction: textInputAction,
+      autofillHints: autofillHints,
       maxLength: maxLength,
       onChanged: onChanged,
       onTap: onTap,
