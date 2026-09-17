@@ -46,42 +46,102 @@ class AppColorTokens {
       onError: scheme.onError,
       errorContainer: scheme.errorContainer,
       onErrorContainer: scheme.onErrorContainer,
-      success: isLight ? AppColorPrimitives.successLight : AppColorPrimitives.successDark,
-      onSuccess: isLight ? AppColorPrimitives.onSuccessLight : AppColorPrimitives.onSuccessDark,
-      successContainer: isLight ? AppColorPrimitives.successContainerLight : AppColorPrimitives.successContainerDark,
-      onSuccessContainer: isLight ? AppColorPrimitives.onSuccessContainerLight : AppColorPrimitives.onSuccessContainerDark,
-      warning: isLight ? AppColorPrimitives.warningLight : AppColorPrimitives.warningDark,
-      onWarning: isLight ? AppColorPrimitives.onWarningLight : AppColorPrimitives.onWarningDark,
-      warningContainer: isLight ? AppColorPrimitives.warningContainerLight : AppColorPrimitives.warningContainerDark,
-      onWarningContainer: isLight ? AppColorPrimitives.onWarningContainerLight : AppColorPrimitives.onWarningContainerDark,
+      success: isLight
+          ? AppColorPrimitives.successLight
+          : AppColorPrimitives.successDark,
+      onSuccess: isLight
+          ? AppColorPrimitives.onSuccessLight
+          : AppColorPrimitives.onSuccessDark,
+      successContainer: isLight
+          ? AppColorPrimitives.successContainerLight
+          : AppColorPrimitives.successContainerDark,
+      onSuccessContainer: isLight
+          ? AppColorPrimitives.onSuccessContainerLight
+          : AppColorPrimitives.onSuccessContainerDark,
+      warning: isLight
+          ? AppColorPrimitives.warningLight
+          : AppColorPrimitives.warningDark,
+      onWarning: isLight
+          ? AppColorPrimitives.onWarningLight
+          : AppColorPrimitives.onWarningDark,
+      warningContainer: isLight
+          ? AppColorPrimitives.warningContainerLight
+          : AppColorPrimitives.warningContainerDark,
+      onWarningContainer: isLight
+          ? AppColorPrimitives.onWarningContainerLight
+          : AppColorPrimitives.onWarningContainerDark,
     );
   }
 
   static AppColorRoles _orangeRoles(Brightness brightness) {
     final isLight = brightness == Brightness.light;
     return AppColorRoles(
-      primary: isLight ? AppColorPrimitives.orangeSolidLight : AppColorPrimitives.orangeSolidDark,
-      onPrimary: isLight ? AppColorPrimitives.onOrangeSolidLight : AppColorPrimitives.onOrangeSolidDark,
-      primaryContainer: isLight ? AppColorPrimitives.orangeContainerLight : AppColorPrimitives.orangeContainerDark,
-      onPrimaryContainer: isLight ? AppColorPrimitives.onOrangeContainerLight : AppColorPrimitives.onOrangeContainerDark,
-      secondary: isLight ? AppColorPrimitives.orangeContainerLight : AppColorPrimitives.orangeContainerDark,
-      onSecondary: isLight ? AppColorPrimitives.onOrangeContainerLight : AppColorPrimitives.onOrangeContainerDark,
-      background: isLight ? AppColorPrimitives.orangeBackgroundLight : AppColorPrimitives.orangeBackgroundDark,
-      onBackground: isLight ? AppColorPrimitives.onOrangeBackgroundLight : AppColorPrimitives.onOrangeBackgroundDark,
-      surface: isLight ? AppColorPrimitives.orangeBackgroundLight : AppColorPrimitives.orangeBackgroundDark,
-      onSurface: isLight ? AppColorPrimitives.onOrangeBackgroundLight : AppColorPrimitives.onOrangeBackgroundDark,
-      error: isLight ? AppColorPrimitives.onOrangeErrorContainerLight : AppColorPrimitives.onOrangeErrorContainerDark,
-      onError: isLight ? Colors.white : AppColorPrimitives.orangeErrorContainerDark,
-      errorContainer: isLight ? AppColorPrimitives.orangeErrorContainerLight : AppColorPrimitives.orangeErrorContainerDark,
-      onErrorContainer: isLight ? AppColorPrimitives.onOrangeErrorContainerLight : AppColorPrimitives.onOrangeErrorContainerDark,
-      success: isLight ? AppColorPrimitives.successLight : AppColorPrimitives.successDark,
-      onSuccess: isLight ? AppColorPrimitives.onSuccessLight : AppColorPrimitives.onSuccessDark,
-      successContainer: isLight ? AppColorPrimitives.successContainerLight : AppColorPrimitives.successContainerDark,
-      onSuccessContainer: isLight ? AppColorPrimitives.onSuccessContainerLight : AppColorPrimitives.onSuccessContainerDark,
-      warning: isLight ? AppColorPrimitives.warningLight : AppColorPrimitives.warningDark,
-      onWarning: isLight ? AppColorPrimitives.onWarningLight : AppColorPrimitives.onWarningDark,
-      warningContainer: isLight ? AppColorPrimitives.warningContainerLight : AppColorPrimitives.warningContainerDark,
-      onWarningContainer: isLight ? AppColorPrimitives.onWarningContainerLight : AppColorPrimitives.onWarningContainerDark,
+      primary: isLight
+          ? AppColorPrimitives.orangeSolidLight
+          : AppColorPrimitives.orangeSolidDark,
+      onPrimary: isLight
+          ? AppColorPrimitives.onOrangeSolidLight
+          : AppColorPrimitives.onOrangeSolidDark,
+      primaryContainer: isLight
+          ? AppColorPrimitives.orangeContainerLight
+          : AppColorPrimitives.orangeContainerDark,
+      onPrimaryContainer: isLight
+          ? AppColorPrimitives.onOrangeContainerLight
+          : AppColorPrimitives.onOrangeContainerDark,
+      secondary: isLight
+          ? AppColorPrimitives.orangeContainerLight
+          : AppColorPrimitives.orangeContainerDark,
+      onSecondary: isLight
+          ? AppColorPrimitives.onOrangeContainerLight
+          : AppColorPrimitives.onOrangeContainerDark,
+      background: isLight
+          ? AppColorPrimitives.orangeBackgroundLight
+          : AppColorPrimitives.orangeBackgroundDark,
+      onBackground: isLight
+          ? AppColorPrimitives.onOrangeBackgroundLight
+          : AppColorPrimitives.onOrangeBackgroundDark,
+      surface: isLight
+          ? AppColorPrimitives.orangeBackgroundLight
+          : AppColorPrimitives.orangeBackgroundDark,
+      onSurface: isLight
+          ? AppColorPrimitives.onOrangeBackgroundLight
+          : AppColorPrimitives.onOrangeBackgroundDark,
+      error: isLight
+          ? AppColorPrimitives.onOrangeErrorContainerLight
+          : AppColorPrimitives.onOrangeErrorContainerDark,
+      onError: isLight
+          ? Colors.white
+          : AppColorPrimitives.orangeErrorContainerDark,
+      errorContainer: isLight
+          ? AppColorPrimitives.orangeErrorContainerLight
+          : AppColorPrimitives.orangeErrorContainerDark,
+      onErrorContainer: isLight
+          ? AppColorPrimitives.onOrangeErrorContainerLight
+          : AppColorPrimitives.onOrangeErrorContainerDark,
+      success: isLight
+          ? AppColorPrimitives.successLight
+          : AppColorPrimitives.successDark,
+      onSuccess: isLight
+          ? AppColorPrimitives.onSuccessLight
+          : AppColorPrimitives.onSuccessDark,
+      successContainer: isLight
+          ? AppColorPrimitives.successContainerLight
+          : AppColorPrimitives.successContainerDark,
+      onSuccessContainer: isLight
+          ? AppColorPrimitives.onSuccessContainerLight
+          : AppColorPrimitives.onSuccessContainerDark,
+      warning: isLight
+          ? AppColorPrimitives.warningLight
+          : AppColorPrimitives.warningDark,
+      onWarning: isLight
+          ? AppColorPrimitives.onWarningLight
+          : AppColorPrimitives.onWarningDark,
+      warningContainer: isLight
+          ? AppColorPrimitives.warningContainerLight
+          : AppColorPrimitives.warningContainerDark,
+      onWarningContainer: isLight
+          ? AppColorPrimitives.onWarningContainerLight
+          : AppColorPrimitives.onWarningContainerDark,
     );
   }
 

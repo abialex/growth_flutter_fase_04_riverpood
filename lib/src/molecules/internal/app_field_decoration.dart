@@ -23,14 +23,12 @@ InputDecoration buildAppFieldDecoration({
     borderRadius: borderRadius,
     borderSide: BorderSide(
       color: colors.onSurface.withValues(alpha: AppOpacity.border),
-      width: AppBorderWidth.thin,
     ),
   );
   final errorBorder = OutlineInputBorder(
     borderRadius: borderRadius,
     borderSide: BorderSide(
       color: colors.error,
-      width: AppBorderWidth.thin,
     ),
   );
 

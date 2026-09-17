@@ -1,6 +1,6 @@
 name: app_ui_kit
 description: "Reusable Flutter design system: tokens, atoms, molecules and organisms."
-version: 0.5.0
+version: 0.5.1
 publish_to: 'none'
 
 environment:

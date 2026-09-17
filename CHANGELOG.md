@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-09-16
+
+### Fixed
+
+- Fixed Very Good Analysis diagnostics in the shared field decoration and
+  color token formatting.
+
 ## [0.5.0] - 2026-09-16
 
 ### Added
@@ -138,7 +145,8 @@ First usable version of the design system.
 
 * Initial package skeleton (no components).
 
-[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.1
 [0.5.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.0
 [0.4.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.4.0
 [0.3.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.3.0
