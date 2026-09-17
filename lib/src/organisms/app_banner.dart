@@ -19,6 +19,7 @@ class AppBanner extends StatelessWidget {
     this.actionLabel,
     this.onAction,
     this.onDismiss,
+    this.dismissTooltip = 'Cerrar',
   });
 
   /// Text shown in the banner.
@@ -38,6 +39,9 @@ class AppBanner extends StatelessWidget {
 
   /// Called when the close icon is tapped. `null` hides the close icon.
   final VoidCallback? onDismiss;
+
+  /// Tooltip announced for the optional dismiss action.
+  final String dismissTooltip;
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +73,15 @@ class AppBanner extends StatelessWidget {
                   ),
                   if (label != null && action != null) ...[
                     const SizedBox(height: AppSpacing.xs),
-                    InkWell(
-                      onTap: action,
+                    TextButton(
+                      onPressed: action,
+                      style: TextButton.styleFrom(
+                        alignment: Alignment.centerLeft,
+                        foregroundColor: style.foreground,
+                        minimumSize: Size.zero,
+                        padding: EdgeInsets.zero,
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      ),
                       child: Text(
                         label,
                         style: textTheme.labelLarge?.copyWith(
@@ -87,14 +98,12 @@ class AppBanner extends StatelessWidget {
             ),
             if (onDismiss != null) ...[
               const SizedBox(width: AppSpacing.xs),
-              InkWell(
-                onTap: onDismiss,
-                borderRadius: BorderRadius.circular(AppRadius.full),
-                child: Icon(
-                  Icons.close,
-                  color: style.foreground,
-                  size: AppIconSize.sm,
-                ),
+              IconButton(
+                tooltip: dismissTooltip,
+                onPressed: onDismiss,
+                color: style.foreground,
+                icon: const Icon(Icons.close),
+                iconSize: AppIconSize.sm,
               ),
             ],
           ],

@@ -22,7 +22,7 @@ dependencies:
   app_ui_kit:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
-      ref: v0.6.0   # usa un tag de release, no `master`, para no arrastrar
+      ref: v0.7.0   # usa un tag de release, no `master`, para no arrastrar
                     # cambios sin querer — ver tags disponibles en el repo
 ```
 
@@ -187,6 +187,8 @@ AppPasswordField(
   controller: passwordController,
   textInputAction: TextInputAction.done,
   autofillHints: const [AutofillHints.password],
+  showPasswordTooltip: 'Mostrar contraseña',
+  hidePasswordTooltip: 'Ocultar contraseña',
 );
 
 AppDropdownField<String>(
@@ -246,6 +248,8 @@ AppCard(
 AppCard(
   variant: AppCardVariant.outlined,
   onTap: () {},
+  semanticLabel: 'Detalle del evento de fútbol',
+  semanticHint: 'Toca para abrir el detalle',
   header: const Text('Encabezado'),
   child: const Text('Contenido'),
 );
@@ -266,6 +270,8 @@ AppBanner(
   message: 'Tu plan vence en 3 días.',
   actionLabel: 'Renovar',
   onAction: () {},
+  onDismiss: () {},
+  dismissTooltip: 'Cerrar aviso',
 );
 
 AppEmptyState(

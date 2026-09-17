@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-09-16
+
+### Added
+
+- Added optional accessibility labels and hints to `AppCard`.
+- Added configurable password visibility and banner dismissal tooltips.
+
+### Changed
+
+- Made `AppBanner` actions native text and icon buttons with keyboard focus and
+  screen-reader semantics.
+
 ## [0.6.0] - 2026-09-16
 
 ### Added
@@ -152,7 +164,8 @@ First usable version of the design system.
 
 * Initial package skeleton (no components).
 
-[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.7.0
 [0.6.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.6.0
 [0.5.1]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.1
 [0.5.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.0

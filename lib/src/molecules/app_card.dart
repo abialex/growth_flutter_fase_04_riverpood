@@ -28,6 +28,8 @@ class AppCard extends StatelessWidget {
     this.padding = const EdgeInsets.all(AppSpacing.md),
     this.header,
     this.footer,
+    this.semanticLabel,
+    this.semanticHint,
   });
 
   /// Content inside the card. Required.
@@ -52,6 +54,12 @@ class AppCard extends StatelessWidget {
 
   /// Optional widget rendered below [child], separated by [AppSpacing.sm].
   final Widget? footer;
+
+  /// Optional label announced by assistive technologies.
+  final String? semanticLabel;
+
+  /// Optional hint announced for a tappable card.
+  final String? semanticHint;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +103,7 @@ class AppCard extends StatelessWidget {
       child: Padding(padding: padding, child: content),
     );
 
-    return switch (variant) {
+    final card = switch (variant) {
       AppCardVariant.elevated => Card(
         color: backgroundColor,
         elevation: AppElevation.low,
@@ -119,5 +127,19 @@ class AppCard extends StatelessWidget {
         child: body,
       ),
     };
+
+    final label = semanticLabel;
+    final hint = semanticHint;
+    if (label == null && hint == null) return card;
+
+    return Semantics(
+      container: true,
+      excludeSemantics: true,
+      button: onTap != null,
+      label: label,
+      hint: hint,
+      onTap: onTap,
+      child: card,
+    );
   }
 }

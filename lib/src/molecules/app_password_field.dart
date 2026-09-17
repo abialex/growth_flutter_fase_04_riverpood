@@ -20,6 +20,8 @@ class AppPasswordField extends StatefulWidget {
     this.textInputAction,
     this.autofillHints,
     this.onChanged,
+    this.showPasswordTooltip = 'Mostrar contraseña',
+    this.hidePasswordTooltip = 'Ocultar contraseña',
   });
 
   /// Controls and reads the field's text. If `null`, the field manages its
@@ -53,6 +55,12 @@ class AppPasswordField extends StatefulWidget {
 
   /// Called with the current text every time it changes.
   final ValueChanged<String>? onChanged;
+
+  /// Tooltip shown when the password is hidden.
+  final String showPasswordTooltip;
+
+  /// Tooltip shown when the password is visible.
+  final String hidePasswordTooltip;
 
   @override
   State<AppPasswordField> createState() => _AppPasswordFieldState();
@@ -94,6 +102,9 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
         errorText: widget.errorText,
         isDisabled: !widget.enabled,
         suffixIcon: IconButton(
+          tooltip: _isObscured
+              ? widget.showPasswordTooltip
+              : widget.hidePasswordTooltip,
           icon: Icon(
             _isObscured
                 ? Icons.visibility_off_outlined
