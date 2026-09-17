@@ -22,7 +22,7 @@ dependencies:
   app_ui_kit:
     git:
       url: https://github.com/abialex/growth_flutter_fase_04_riverpood.git
-      ref: v0.4.0   # usa un tag de release, no `master`, para no arrastrar
+      ref: v0.5.0   # usa un tag de release, no `master`, para no arrastrar
                     # cambios sin querer — ver tags disponibles en el repo
 ```
 
@@ -201,6 +201,36 @@ AppPhoneField(
 );
 ```
 
+### Validadores de formularios
+
+`AppValidators` ofrece validadores configurables compatibles con
+`FormFieldValidator<String>`. Los validadores de formato y longitud aceptan
+valores vacíos para poder combinarlos con `requiredField`.
+
+```dart
+import 'package:app_ui_kit/app_ui_kit.dart';
+import 'package:flutter/material.dart';
+
+TextFormField(
+  validator: AppValidators.password(
+    minLength: 6,
+    requireUppercase: true,
+    requireSpecialCharacter: true,
+  ),
+);
+
+TextFormField(
+  validator: AppValidators.compose([
+    AppValidators.requiredField(),
+    AppValidators.email(),
+  ]),
+);
+```
+
+Puedes personalizar los mensajes mediante los parámetros `message` o sus
+variantes específicas. `compose` ejecuta las reglas en orden y devuelve el
+primer error.
+
 ### Cards
 
 ```dart
@@ -296,6 +326,7 @@ lib/
     ├── tokens/              # color (2 marcas), tipografía, espaciado, radios, elevation, iconos, opacidad
     ├── atoms/                # AppButton, AppLoader
     ├── molecules/            # AppCard, AppChip, AppTextField, AppPasswordField, AppDropdownField, AppPhoneField
+    ├── validation/           # AppValidators para reglas comunes de formularios
     └── organisms/            # AppBanner, AppEmptyState
 ```
 

@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-09-16
+
+### Added
+
+- Added the public `AppValidators` API with reusable required, length, email,
+  password, numeric limit, optional and composition validators.
+- Added configurable password requirements for minimum length, uppercase,
+  lowercase, digits and special characters.
+
 ## [0.4.0] - 2026-09-15
 
 ### Added
@@ -129,7 +138,8 @@ First usable version of the design system.
 
 * Initial package skeleton (no components).
 
-[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/abialex/growth_flutter_fase_04_riverpood/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.5.0
 [0.4.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.4.0
 [0.3.0]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.3.0
 [0.2.2]: https://github.com/abialex/growth_flutter_fase_04_riverpood/releases/tag/v0.2.2
